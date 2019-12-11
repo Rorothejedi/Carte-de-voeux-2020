@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./vendor/animate.css">
+    <link rel="stylesheet" href="./resources/css/styles.css">
+    <title>Florès| Carte de voeux 2020</title>
+</head>
+
+<body>
+    <div id="firstScreen" class="text-center">
+        <h2 class="title">
+            <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="moustache" />
+            Bienvenue...
+        </h2>
+        <h3 class="subtitle">au royaume de l'expérienciel</h3>
+        <p class="tuto">Pour commencer<br />déplacez le bouton vers la droite</p>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+            <defs>
+                <pattern id="image" height="100%" width="100%" viewBox="0 0 512 512">
+                    <image  width="512" height="512"xlink:href="./resources/svg/bouton-fleche-droite.svg"></image>
+                </pattern>
+            </defs>
+            <!-- Design path -->
+            <path
+                class="path"
+                d="M75 0 375 0"
+            />
+            <!-- Real path -->
+            <path 
+                id="path"
+                d="M0 0 450 0"
+            />
+            <!-- Target -->
+            <circle 
+                id="target"
+                r="30"
+                cx="450"
+                cy="0"
+                class="target animated targetAnimation"
+            />
+            <!-- Handle circle -->
+            <circle 
+                id="circle"
+                r="30" 
+                cx="0" 
+                cy="0"
+                fill="url(#image)"
+                class="circle animated circleAnimation"
+            />
+            
+        </svg>
+        <img id="actionOk" src="./resources/svg/action-validee.svg" alt="Action validée" />
+    </div>
+
+    <div id="secondScreen" class="text-center screen animated slideInUp">
+        <h2 class="title titleSecondScreen">
+            <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="moustache moustacheSecondScreen" />
+            C’est l’histoire...
+        </h2>
+        <h3 class="subtitle subtitleSecondScreen animated fadeIn slow delay-1s">
+            ...d'un chat, que l'on caressait chaque jour <span class="underline">dans le sens du poil,</span><br /> parcequ'on avait toujours fait comme ça...
+        </h3>
+        <div id="rrr">
+            <img class="rrrOne animated rrrAnimation" src="./resources/svg/Rrr.svg" alt="Rrr">
+            <img class="rrrTwo animated rrrAnimation" src="./resources/svg/Rrr.svg" alt="Rrr">
+            <img class="rrrThree animated rrrAnimation" src="./resources/svg/Rrr.svg" alt="Rrr">
+        </div>
+        <div>
+            <img class="sleepingCatSecondScreen" src="./resources/svg/ecran2-chat.svg" alt="Chat qui dors" />
+            <img class="sleepingCatsTailSecondScreen" src="./resources/svg/ecran2-queueduchat.svg" alt="Queue du chat qui dors">
+        </div>
+    </div>
+
+    <div id="thirdScreen" class="screen animated slideInUp">
+        <p>Quand on le caressait comme on l'avait toujours fait, le chat ronronnait comme il l'avait toujours fait</p>
+    </div>
+
+    <div id="fourthScreen" class="screen animated slideInUp">
+        <p>Et puis un jour on décida, d'induire un changement dans tout ça, et à rebrousse poil on caressa le chat</p>
+        <p>Vous avez peur de vous faire griffer ? Allé essayez...</p>
+    </div>
+
+    <div id="fifthScreen" class="screen animated slideInUp">
+        <p>Le chat se sentant agressé, se réveilla et se mit à siffler. N'appréciant pas se changement, il manifesta son
+            mécontentement</p>
+        <p>Oui mais... Voulez-vous connaitre la suite ?</p>
+    </div>
+
+    <div id="sixthScreen" class="screen animated slideInUp">
+        <p>Le chat, à présent complétement réveillé se mit à bouger, sauter et jouer avec l'imprudent qui sans penser à
+            mal, avait arrêté de le brosser dans le sens du poil...</p>
+        <p id="noPlay">Voulez-vous connaitre la morale de cette histoire ?</p>
+    </div>
+
+    <div id="lastScreen" class="screen animated slideInUp">
+        <p id="firstFade">Chez Florès nous aimons tenter la vie à rebrousse poil, à rebrousse codes, à rebrousse
+            traditions.</p>
+        <p id="secondFade">Parceque "on a toujours fait comme ça" n'est pas une raison valable, et que du changement
+            naissent des phénomènes incroyables.</p>
+        <p id="thirdFade">2020 nous offre des concepts à inventer, des pistes à explorer, des coussinets à user...</p>
+        <p id="fourthFade">Excellente année</p>
+        <p id="lastFade">L'équipe Florès</p>
+    </div>
+
+    <!-- Button de test -->
+    <button id="nextTest" class="d-none">Next</button>
+   
+    <noscript class="text-center">
+        JavaScript est necessaire pour consulter notre carte de Voeux !
+        <br />
+        Vous pouvez l'activer dans les options de votre navigateur web.
+    </noscript>
+    <script src="./vendor/jQuery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/utils/Draggable.min.js"></script>
+    
+    <script src="./resources/js/screenChange.js"></script>
+    <script src="./resources/js/pathRangeSlider.js"></script>
+</body>
+
+</html>

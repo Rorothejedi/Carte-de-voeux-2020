@@ -1,0 +1,198 @@
+/* Import des polices */
+
+@font-face {
+    font-family: "LeckerliOneRegular";
+    src: url("/resources/fonts/LeckerliOne-Regular.ttf");
+}
+@font-face {
+    font-family: "RobotoLight";
+    src: url("/resources/fonts/Roboto-Light.ttf");
+}
+
+/* Couleur du surlignage souris */
+
+::selection { background-color: #231F20; color: white; }
+::-moz-selection { background-color: #231F20; color: white; }
+
+
+/* ---------------------   Commons   ---------------------- */
+
+/* Suppression de la barre de défilement */
+html { 
+    overflow-y: hidden; 
+}
+body {
+    height: 100vh;
+    color: #231F20;
+}
+
+.screen {
+    /* display: none; */
+    height: 100vh;
+}
+.underline {
+    background-color: #231F20; 
+    color: white;
+}
+
+/* Screen 1 */
+
+.title {
+    position: relative;
+    padding-top: 80px;
+    font-size: 3.5rem;
+    font-family: "LeckerliOneRegular";
+}
+.moustache {
+    width: 45px;
+    position: absolute;
+    bottom: 80px;
+}
+.subtitle {
+    padding-top: 20px;
+    font-size: 1.2rem;
+    font-family: "RobotoLight";
+}
+.tuto {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    font-size: 2.2rem;
+    font-family: "RobotoLight";
+}
+#actionOk {
+    width: 35px;
+    position: relative;
+    left: 20px;
+    bottom: 15px;
+    visibility: hidden;
+}
+
+/* Screen 2 */
+
+.titleSecondScreen {
+    font-size: 2.2rem;
+    padding-top: 45px;
+    margin-left: 20vw;
+}
+.moustacheSecondScreen {
+    bottom: 52px;
+}
+.subtitleSecondScreen {
+    padding-top: 5px;
+    margin-left: 20vw;
+}
+.sleepingCatSecondScreen {
+    width: 60vw;
+    min-width: 300px;
+    position: absolute;
+    bottom: 20px;
+    left: 10vw;
+}
+.sleepingCatsTailSecondScreen {
+    width: 28vw;
+    min-width: 120px;
+    position: absolute;
+    bottom: 30px;
+    left: 46vw;
+}
+
+#rrr {
+    /* display: none; */
+}
+.rrrOne, .rrrTwo, .rrrThree {
+    position: absolute;
+    width: 7vw;
+}
+.rrrOne {
+    animation: 1s infinite alternate ease;
+    transform: rotate(-25deg);
+    left: 10vw;
+    bottom: 62vh;
+}
+.rrrTwo {
+    animation: 1.5s infinite alternate ease;
+    left: 17vw;
+    bottom: 75vh;
+}
+.rrrThree {
+    animation: 1.2s infinite alternate ease;
+    transform: rotate(-20deg);
+    left: 19vw;
+    bottom: 60vh;
+}
+
+/* SVG */
+
+svg {
+    overflow: visible;
+    width: 450px;
+    height: 100px;
+}
+
+.path {
+    stroke: #231F20;
+    stroke-dasharray: 8,6;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    fill: transparent;
+}
+.circle {
+    animation: 1s infinite alternate ease;
+}
+.target {
+    animation: 1s infinite 0.5s alternate ease;
+    fill: white;
+    stroke: #231F20;
+    stroke-width: 0.8px;
+}
+
+/* .svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+} */
+
+
+/* Animations */
+.targetAnimation, .circleAnimation {
+    animation-name: fadeIn;
+}
+.rrrAnimation {
+    animation-name: tada, fadeIn, pulse;
+}
+
+
+/* TEST */
+.screen {
+    display: none;
+}
+
+#firstScreen {
+    /* display: none !important; */
+}
+#secondScreen {
+
+}
+#thirdScreen {
+    display: none !important;
+    background-color: yellow;
+}
+#fourthScreen {
+    display: none !important;
+    background-color: teal;
+}
+#fifthScreen {
+    display: none !important;
+    background-color: tomato;
+}
+#sixthScreen {
+    display: none !important;
+    background-color: violet;
+}
+#lastScreen {
+    display: none !important;
+    background-color: wheat;
+}
