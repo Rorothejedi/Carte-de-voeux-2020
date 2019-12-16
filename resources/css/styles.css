@@ -61,7 +61,6 @@ body {
 }
 
 /* SCREEN 1 */
-
 .title {
     position: relative;
     padding-top: 100px;
@@ -89,7 +88,6 @@ body {
 }
 
 /* SCREEN 2 */
-
 .titleSecondScreen {
     font-size: 2.5rem;
     padding-top: 45px;
@@ -143,25 +141,38 @@ body {
 }
 
 /* SCREEN 3*/
-
 .catThirdScreen {
     width: 60vw;
     position: absolute;
-    /* min-width: 300px; */
     bottom: 30px;
     left: 10vw;
 }
 .catTailThirdScreen {
     width: 14vw;
     position: absolute;
-    /* min-width: 60px; */
     bottom: 10vw;
     left: 67vw;
 }
 
+/* SCREEN 5 */
+.angryMoustache {
+    transform: rotate(270deg);
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.angryCat {
+    position: relative;
+    z-index: -10;
+    height: 100vh;
+    top: -350px;
+    left: -10px;
+}
+.otherSubtitle {
+    padding-top: 50px;
+}
+
 
 /* SVG */
-
 .range {
     white-space: nowrap;
     position: relative;
@@ -170,7 +181,6 @@ body {
 svg {
     overflow: visible;
 }
-
 .path {
     stroke: var(--main-color);
     stroke-dasharray: 8,7;
@@ -194,7 +204,6 @@ svg {
     margin-right: -20px;
     visibility: hidden;
 }
-
 
 /* Animations */
 .targetAnimation, .circleAnimation {
@@ -274,6 +283,18 @@ svg {
         width: 20vw;
         bottom: 12vw;
         left: 78vw;
+    }
+
+    /* SCREEN 5 */
+    .angryCat {
+        max-width: initial !important;
+        width: 1100px;
+        /* height: auto; */
+        top: -450px;
+        left: 0px;
+    }
+    .angryTitle, .angrySubtitle {
+        margin-left: 350px;
     }
     
 }
@@ -363,9 +384,16 @@ svg {
         bottom: 12vw;
         left: 78vw;
     }
+
+    /* SCREEN 5 */
+    .angryCat {
+        max-width: initial !important;
+        width: 300px;
+        height: auto;
+        top: 10px;
+        left: 0px;
+    }
 }
-
-
 
 
 /* !!!!!!!!!!     TEST     !!!!!!!!!!!!! */
@@ -380,15 +408,13 @@ svg {
     display: none !important;
 }
 #thirdScreen {
-    /* display: none !important; */
+    display: none !important;
 }
 #fourthScreen {
     display: none !important;
-    background-color: teal;
 }
 #fifthScreen {
-    display: none !important;
-    background-color: tomato;
+    /* display: none !important; */
 }
 #sixthScreen {
     display: none !important;
