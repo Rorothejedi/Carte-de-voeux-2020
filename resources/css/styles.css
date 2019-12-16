@@ -8,11 +8,25 @@
     font-family: "RobotoLight";
     src: url("/resources/fonts/Roboto-Light.ttf");
 }
+@font-face {
+    font-family: "RobotoThin";
+    src: url("/resources/fonts/Roboto-Thin.ttf");
+}
+
+/* Couleurs CSS */
+:root {
+    --main-color: black;
+    --bg-color: white;
+  }
 
 /* Couleur du surlignage souris */
 
-::selection { background-color: #231F20; color: white; }
-::-moz-selection { background-color: #231F20; color: white; }
+
+
+::selection { background-color: var(--main-color); color: var(--bg-color); }
+::-moz-selection { background-color: var(--main-color); color: var(--bg-color); }
+
+
 
 
 /* ---------------------   Commons   ---------------------- */
@@ -23,7 +37,7 @@ html {
 }
 body {
     height: 100vh;
-    color: #231F20;
+    color: var(--main-color);
 }
 
 .screen {
@@ -31,41 +45,39 @@ body {
     height: 100vh;
 }
 .underline {
-    background-color: #231F20; 
-    color: white;
+    background-color: var(--main-color); 
+    color: var(--bg-color);
 }
 
 /* Screen 1 */
 
 .title {
     position: relative;
-    padding-top: 80px;
-    font-size: 3.5rem;
+    padding-top: 100px;
+    font-size: 4.7rem;
     font-family: "LeckerliOneRegular";
 }
 .moustache {
-    width: 45px;
+    width: 60px;
     position: absolute;
-    bottom: 80px;
+    bottom: 100px;
 }
 .subtitle {
-    padding-top: 20px;
-    font-size: 1.2rem;
-    font-family: "RobotoLight";
+    padding-top: 22px;
+    font-size: 1.7rem;
+    font-family: "RobotoThin", sans-serif;
+    font-weight: 500;
+
 }
 .tuto {
-    padding-top: 100px;
+    padding-top: 135px;
     padding-bottom: 80px;
-    font-size: 2.2rem;
-    font-family: "RobotoLight";
+    font-size: 3rem;
+    font-family: "RobotoThin", sans-serif;
+    line-height: 3.5rem;
+    font-weight: 500;
 }
-#actionOk {
-    width: 35px;
-    position: relative;
-    left: 20px;
-    bottom: 15px;
-    visibility: hidden;
-}
+
 
 /* Screen 2 */
 
@@ -123,37 +135,38 @@ body {
 
 /* SVG */
 
+.range {
+    white-space: nowrap;
+    position: relative;
+    padding: 60px;
+}
 svg {
     overflow: visible;
-    width: 450px;
-    height: 100px;
 }
 
 .path {
-    stroke: #231F20;
-    stroke-dasharray: 8,6;
-    stroke-width: 1.5;
+    stroke: var(--main-color);
+    stroke-dasharray: 8,7;
+    stroke-width: 1.9;
     stroke-linecap: round;
-    fill: transparent;
 }
 .circle {
     animation: 1s infinite alternate ease;
 }
 .target {
     animation: 1s infinite 0.5s alternate ease;
-    fill: white;
-    stroke: #231F20;
+    fill: var(--bg-color);
+    stroke: var(--main-color);
     stroke-width: 0.8px;
 }
-
-/* .svg-container {
-    display: inline-block;
+#actionOk {
+    width: 3rem;
     position: relative;
-    width: 100%;
-    padding-bottom: 100%;
-    vertical-align: middle;
-    overflow: hidden;
-} */
+    left: 20px;
+    bottom: 60px;
+    margin-right: -20px;
+    visibility: hidden;
+}
 
 
 /* Animations */
@@ -195,4 +208,60 @@ svg {
 #lastScreen {
     display: none !important;
     background-color: wheat;
+}
+
+/* --------------   RESPONSIVE   -------------- */
+
+/* Extra small (xs) */
+@media (min-width: 577px) and (max-width: 768px) {
+    /* SCREEN 1*/
+    .title {
+        padding-top: 100px;
+        font-size: 4rem;
+    }
+    .tuto {
+        padding-top: 130px;
+        padding-bottom: 80px;
+    }
+    .range {
+        padding: 130px;
+    }
+    #actionOk {
+        width: 3rem;
+        left: 15px;
+        bottom: 40px;
+        margin-right: -15px;
+    }
+
+    /* SCREEN 2 */
+}
+
+/* Small (sm) */
+@media (max-width: 576px) {
+    /* SCREEN 1*/
+    .title {
+        padding-top: 50px;
+        font-size: 2rem;
+    }
+    .moustache {
+        width: 30px;
+        bottom: 45px;
+    }
+    .subtitle {
+        padding-top: 10px;
+        font-size: 1.2rem;
+    }
+    .tuto {
+        padding-top: 30px;
+        padding-bottom: 10px;
+        font-size: 2rem;
+    }
+    #actionOk {
+        width: 1.5rem;
+        left: 5px;
+        bottom: 10px;
+        margin-right: -5px;
+    }
+
+    /* SCREEN 2 */
 }

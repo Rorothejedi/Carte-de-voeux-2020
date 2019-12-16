@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./vendor/animate.css">
     <link rel="stylesheet" href="./resources/css/styles.css">
-    <title>Florès| Carte de voeux 2020</title>
+    <title>Florès | Carte de voeux 2020</title>
 </head>
 
 <body>
@@ -19,45 +19,47 @@
         </h2>
         <h3 class="subtitle">au royaume de l'expérienciel</h3>
         <p class="tuto">Pour commencer<br />déplacez le bouton vers la droite</p>
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
-            <defs>
-                <pattern id="image" height="100%" width="100%" viewBox="0 0 512 512">
-                    <image  width="512" height="512"xlink:href="./resources/svg/bouton-fleche-droite.svg"></image>
-                </pattern>
-            </defs>
-            <!-- Design path -->
-            <path
-                class="path"
-                d="M75 0 375 0"
-            />
-            <!-- Real path -->
-            <path 
-                id="path"
-                d="M0 0 450 0"
-            />
-            <!-- Target -->
-            <circle 
-                id="target"
-                r="30"
-                cx="450"
-                cy="0"
-                class="target animated targetAnimation"
-            />
-            <!-- Handle circle -->
-            <circle 
-                id="circle"
-                r="30" 
-                cx="0" 
-                cy="0"
-                fill="url(#image)"
-                class="circle animated circleAnimation"
-            />
-            
-        </svg>
-        <img id="actionOk" src="./resources/svg/action-validee.svg" alt="Action validée" />
+        <div class="range">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="700px" height="100%" viewBox="0 0 500 150" class="img-fluid">
+                <defs>
+                    <pattern id="image" height="100%" width="100%" viewBox="0 0 500 500">
+                        <image width="500" height="500" xlink:href="./resources/svg/bouton-fleche-droite.svg"></image>
+                    </pattern>
+                </defs>
+                <!-- Design path -->
+                <path
+                    class="path"
+                    d="M75 0 425 0"
+                />
+                <!-- Real path -->
+                <path 
+                    id="path"
+                    d="M0 0 700 0"
+                />
+                <!-- Target -->
+                <circle 
+                    id="target"
+                    r="30"
+                    cx="500"
+                    cy="0"
+                    class="target animated targetAnimation"
+                />
+                <!-- Handle circle -->
+                <circle 
+                    id="circle"
+                    r="30" 
+                    cx="0" 
+                    cy="0"
+                    fill="url(#image)"
+                    class="circle animated circleAnimation"
+                />
+            </svg>
+            <img id="actionOk" src="./resources/svg/action-validee.svg" alt="Action validée" />
+        </div>
     </div>
 
-    <div id="secondScreen" class="text-center screen animated slideInUp">
+    <!-- class="text-center screen animated slideInUp" -->
+    <div id="secondScreen"  class="text-center screen">
         <h2 class="title titleSecondScreen">
             <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="moustache moustacheSecondScreen" />
             C’est l’histoire...

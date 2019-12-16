@@ -29,24 +29,27 @@
 
 const path = document.getElementById("path");
 const circle = document.getElementById("circle");
-const W = path.getBBox().width;
+const W = path.getBoundingClientRect().width;
 const pathLength = path.getTotalLength();
 
 const drag = Draggable.create(document.createElement('div'), {
     type: 'x', 
-    bounds: { minX: 0, maxX: W },
+    bounds: { minX: 0, maxX: pathLength },
     trigger: circle, 
-    overshootTolerance: 50, 
+    overshootTolerance: 5, 
     onDrag: update
 });
 
 function update() {
     const P = path.getPointAtLength(this.x / W * pathLength);
 
+    // console.log("P.x : ",P.x)
+    // console.log("pathLength : ", pathLength)
+    // console.log(W)
     TweenLite.set(circle, { attr: { cx: P.x, cy: P.y } });
     if (P.x > 0)
         $( ".circle" ).removeClass("circleAnimation");
-    if (P.x === 450) {
+    if (P.x >= 500) {
         $( "#actionOk" ).hide().css("visibility", "visible").fadeIn();
         drag[0].disable();
         $( "#nextTest" ).click();
