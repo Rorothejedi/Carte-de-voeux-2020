@@ -2,15 +2,15 @@
 
 @font-face {
     font-family: "LeckerliOneRegular";
-    src: url("/resources/fonts/LeckerliOne-Regular.ttf");
+    src: url("../fonts/LeckerliOne-Regular.ttf");
 }
 @font-face {
     font-family: "RobotoLight";
-    src: url("/resources/fonts/Roboto-Light.ttf");
+    src: url("../fonts/Roboto-Light.ttf");
 }
 @font-face {
     font-family: "RobotoThin";
-    src: url("/resources/fonts/Roboto-Thin.ttf");
+    src: url("../fonts/Roboto-Thin.ttf");
 }
 
 /* Couleurs CSS */
@@ -20,13 +20,8 @@
   }
 
 /* Couleur du surlignage souris */
-
-
-
 ::selection { background-color: var(--main-color); color: var(--bg-color); }
 ::-moz-selection { background-color: var(--main-color); color: var(--bg-color); }
-
-
 
 
 /* ---------------------   Commons   ---------------------- */
@@ -39,17 +34,33 @@ body {
     height: 100vh;
     color: var(--main-color);
 }
-
 .screen {
-    /* display: none; */
     height: 100vh;
 }
 .underline {
     background-color: var(--main-color); 
     color: var(--bg-color);
 }
+.otherTitle {
+    position: relative;
+    padding-top: 70px;
+    font-size: 2.5rem;
+    font-family: "LeckerliOneRegular";
+}
+.otherSubtitle {
+    padding-top: 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "RobotoThin", sans-serif;
+    line-height: 1.7rem;
+}
+.otherMoustache {
+    width: 50px;
+    position: absolute;
+    bottom: 60px;
+}
 
-/* Screen 1 */
+/* SCREEN 1 */
 
 .title {
     position: relative;
@@ -58,16 +69,15 @@ body {
     font-family: "LeckerliOneRegular";
 }
 .moustache {
-    width: 60px;
     position: absolute;
+    width: 60px;
     bottom: 100px;
 }
 .subtitle {
     padding-top: 22px;
     font-size: 1.7rem;
-    font-family: "RobotoThin", sans-serif;
     font-weight: 500;
-
+    font-family: "RobotoThin", sans-serif;
 }
 .tuto {
     padding-top: 135px;
@@ -78,36 +88,35 @@ body {
     font-weight: 500;
 }
 
-
-/* Screen 2 */
+/* SCREEN 2 */
 
 .titleSecondScreen {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     padding-top: 45px;
-    margin-left: 20vw;
+    margin-left: 10vw;
 }
 .moustacheSecondScreen {
     bottom: 52px;
 }
 .subtitleSecondScreen {
+    font-size: 1.4rem;
     padding-top: 5px;
-    margin-left: 20vw;
+    margin-left: 10vw;
 }
-.sleepingCatSecondScreen {
+.catSecondScreen {
     width: 60vw;
     min-width: 300px;
     position: absolute;
     bottom: 20px;
     left: 10vw;
 }
-.sleepingCatsTailSecondScreen {
+.catTailSecondScreen {
     width: 28vw;
     min-width: 120px;
     position: absolute;
     bottom: 30px;
     left: 46vw;
 }
-
 #rrr {
     /* display: none; */
 }
@@ -116,22 +125,40 @@ body {
     width: 7vw;
 }
 .rrrOne {
-    animation: 1s infinite alternate ease;
+    /* animation: 1s infinite alternate ease; */
     transform: rotate(-25deg);
     left: 10vw;
     bottom: 62vh;
 }
 .rrrTwo {
-    animation: 1.5s infinite alternate ease;
+    /* animation: 1.5s infinite alternate ease; */
     left: 17vw;
     bottom: 75vh;
 }
 .rrrThree {
-    animation: 1.2s infinite alternate ease;
-    transform: rotate(-20deg);
+    /* animation: 1.2s infinite alternate ease; */
+    transform: rotate(-15deg);
     left: 19vw;
     bottom: 60vh;
 }
+
+/* SCREEN 3*/
+
+.catThirdScreen {
+    width: 60vw;
+    position: absolute;
+    /* min-width: 300px; */
+    bottom: 30px;
+    left: 10vw;
+}
+.catTailThirdScreen {
+    width: 14vw;
+    position: absolute;
+    /* min-width: 60px; */
+    bottom: 10vw;
+    left: 67vw;
+}
+
 
 /* SVG */
 
@@ -178,41 +205,9 @@ svg {
 }
 
 
-/* TEST */
-.screen {
-    display: none;
-}
-
-#firstScreen {
-    /* display: none !important; */
-}
-#secondScreen {
-
-}
-#thirdScreen {
-    display: none !important;
-    background-color: yellow;
-}
-#fourthScreen {
-    display: none !important;
-    background-color: teal;
-}
-#fifthScreen {
-    display: none !important;
-    background-color: tomato;
-}
-#sixthScreen {
-    display: none !important;
-    background-color: violet;
-}
-#lastScreen {
-    display: none !important;
-    background-color: wheat;
-}
-
 /* --------------   RESPONSIVE   -------------- */
 
-/* Extra small (xs) */
+/* Small (sm) */
 @media (min-width: 577px) and (max-width: 768px) {
     /* SCREEN 1*/
     .title {
@@ -234,9 +229,56 @@ svg {
     }
 
     /* SCREEN 2 */
+    .titleSecondScreen {
+        font-size: 2.5rem;
+        padding-top: 80px;
+        margin-left: 0;
+    }
+    .subtitleSecondScreen {
+        font-size: 1.5rem;
+        margin-left: 0;
+    }
+    .catSecondScreen {
+        width: 85vw;
+        bottom: 13vw;
+        left: 7vw;
+    }
+    .catTailSecondScreen {
+        width: 40vw;
+        bottom: 15vw;
+        left: 58vw;
+    }
+    .rrrOne, .rrrTwo, .rrrThree {
+        width: 15vw;
+    }
+    .rrrOne {
+        left: 8vw;
+        bottom: 45vh;
+    }
+    .rrrTwo {
+        left: 20vw;
+        bottom: 53vh;
+    }
+    .rrrThree {
+        left: 20vw;
+        bottom: 42vh;
+    }
+
+    /* SCREEN 3 */
+    .catThirdScreen {
+        width: 80vw;
+        bottom: 3vw;
+        left: 3vw;
+    }
+    .catTailThirdScreen {
+        width: 20vw;
+        bottom: 12vw;
+        left: 78vw;
+    }
+    
 }
 
-/* Small (sm) */
+/* Extra small (xs) */
 @media (max-width: 576px) {
     /* SCREEN 1*/
     .title {
@@ -264,4 +306,96 @@ svg {
     }
 
     /* SCREEN 2 */
+    .titleSecondScreen {
+        margin-left: 0vw;
+    }
+    .subtitleSecondScreen {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .catSecondScreen {
+        bottom: 20px;
+        left: 20px;
+    }
+    .catTailSecondScreen {
+        width: 28vw;
+        bottom: 30px;
+        left: 215px;
+    }
+    .rrrOne, .rrrTwo, .rrrThree {
+        width: 20vw;
+    }
+    .rrrOne {
+        bottom: 45vh;
+    }
+    .rrrTwo {
+        left: 40vw;
+        bottom: 50vh;
+    }
+    .rrrThree {
+        left: 70vw;
+        bottom: 47vh;
+    }
+
+    /* SCREEN 3 */
+    .otherTitle {
+        font-size: 2rem;
+        padding-top: 50px;
+        margin-left: 0vw;
+    }
+    .otherSubtitle {
+        font-size: 1.2rem;
+        padding-top: 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .otherMoustache {
+        width: 30px;
+        bottom: 45px;
+    }
+    .catThirdScreen {
+        width: 80vw;
+        bottom: 3vw;
+        left: 3vw;
+    }
+    .catTailThirdScreen {
+        width: 20vw;
+        bottom: 12vw;
+        left: 78vw;
+    }
 }
+
+
+
+
+/* !!!!!!!!!!     TEST     !!!!!!!!!!!!! */
+.screen {
+    /* display: none; */
+}
+
+#firstScreen {
+    display: none !important;
+}
+#secondScreen {
+    display: none !important;
+}
+#thirdScreen {
+    /* display: none !important; */
+}
+#fourthScreen {
+    display: none !important;
+    background-color: teal;
+}
+#fifthScreen {
+    display: none !important;
+    background-color: tomato;
+}
+#sixthScreen {
+    display: none !important;
+    background-color: violet;
+}
+#lastScreen {
+    display: none !important;
+    background-color: wheat;
+}
+/*_____________________________________________*/
