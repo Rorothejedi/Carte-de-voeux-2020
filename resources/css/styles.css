@@ -28,6 +28,8 @@
 
 /* Suppression de la barre de défilement */
 html { 
+    margin: 0;
+    padding: 0;
     overflow-y: hidden; 
 }
 body {
@@ -41,44 +43,44 @@ body {
     background-color: var(--main-color); 
     color: var(--bg-color);
 }
-.otherTitle {
+.SX-title {
     position: relative;
     padding-top: 70px;
     font-size: 2.5rem;
     font-family: "LeckerliOneRegular";
 }
-.otherSubtitle {
+.SX-subtitle {
     padding-top: 10px;
     font-size: 1.5rem;
     font-weight: 500;
     font-family: "RobotoThin", sans-serif;
     line-height: 1.7rem;
 }
-.otherMoustache {
+.SX-moustache {
     width: 50px;
     position: absolute;
     bottom: 60px;
 }
 
 /* SCREEN 1 */
-.title {
+.S1-title {
     position: relative;
     padding-top: 100px;
     font-size: 4.7rem;
     font-family: "LeckerliOneRegular";
 }
-.moustache {
+.S1-moustache {
     position: absolute;
     width: 60px;
     bottom: 100px;
 }
-.subtitle {
+.S1-subtitle {
     padding-top: 22px;
     font-size: 1.7rem;
     font-weight: 500;
     font-family: "RobotoThin", sans-serif;
 }
-.tuto {
+.S1-tuto {
     padding-top: 135px;
     padding-bottom: 80px;
     font-size: 3rem;
@@ -88,7 +90,7 @@ body {
 }
 
 /* SCREEN 2 */
-.titleSecondScreen {
+.S2-title {
     font-size: 2.5rem;
     padding-top: 45px;
     margin-left: 10vw;
@@ -96,19 +98,19 @@ body {
 .moustacheSecondScreen {
     bottom: 52px;
 }
-.subtitleSecondScreen {
+.S2-subtitle {
     font-size: 1.4rem;
     padding-top: 5px;
     margin-left: 10vw;
 }
-.catSecondScreen {
+.S2-cat {
     width: 60vw;
     min-width: 300px;
     position: absolute;
     bottom: 20px;
     left: 10vw;
 }
-.catTailSecondScreen {
+.S2-catTail {
     width: 28vw;
     min-width: 120px;
     position: absolute;
@@ -141,13 +143,13 @@ body {
 }
 
 /* SCREEN 3*/
-.catThirdScreen {
+.S3-cat {
     width: 60vw;
     position: absolute;
     bottom: 30px;
     left: 10vw;
 }
-.catTailThirdScreen {
+.S3-catTail {
     width: 14vw;
     position: absolute;
     bottom: 10vw;
@@ -155,20 +157,51 @@ body {
 }
 
 /* SCREEN 5 */
-.angryMoustache {
+.S5-moustache {
     transform: rotate(270deg);
     margin-left: 20px;
     margin-bottom: 10px;
 }
-.angryCat {
+.S5-cat {
     position: relative;
     z-index: -10;
     height: 100vh;
     top: -350px;
     left: -10px;
 }
-.otherSubtitle {
+.angrySubtitle {
     padding-top: 50px;
+}
+#afterAngry {
+    width: 400px !important;
+    position: relative;
+    top: -750px;
+    left: 65vw;
+}
+.S5-subtitle {
+    padding-top: 0;
+}
+.S5-img {
+    position: relative;
+}
+.S5-eclairs {
+    position: absolute;
+}
+.S5-eclair1 {
+    width: 4%;
+    top: -290px;
+    left: 37vh;
+}
+.S5-eclair2 {
+    width: 6%;
+    top: -280px;
+    left: 20vh;
+}
+.S5-pfff {
+    position: absolute;
+    width: 10%;
+    top: 35vh;
+    left: 8vw;
 }
 
 
@@ -196,7 +229,7 @@ svg {
     stroke: var(--main-color);
     stroke-width: 0.8px;
 }
-#actionOk {
+#SX-action {
     width: 3rem;
     position: relative;
     left: 20px;
@@ -216,21 +249,64 @@ svg {
 
 /* --------------   RESPONSIVE   -------------- */
 
+/* 4K Screen */
+@media (min-width: 2560px) {
+    /* SCREEN 5 */
+    #afterAngry {
+        top: -950px;
+        left: 70vw;
+    }
+    .angryTitle, .angrySubtitle {
+        position: relative;
+        top: 100px;
+    }
+    .S5-eclair1 {
+        top: -270px;
+        left: 27vh;
+    }
+    .S5-eclair2 {
+        top: -240px;
+        left: 10vh;
+    }
+    .S5-pfff {
+        top: 47vh;
+        left: 7vw;
+    }
+}
+
+/* Ecran medium (md) */
+@media (min-width: 1024px) and (max-width: 1919px) {
+    /* SCREEN 5 */
+    .S5-eclair1 {
+        top: -275px;
+        left: 17vh;
+    }
+    .S5-eclair2 {
+        top: -280px;
+        left: 4vh;
+    }
+    .S5-pfff {
+        width: 150px;
+        top: 33vh;
+        left: 7vw;
+    }
+}
+
 /* Small (sm) */
 @media (min-width: 577px) and (max-width: 768px) {
     /* SCREEN 1*/
-    .title {
+    .S1-title {
         padding-top: 100px;
         font-size: 4rem;
     }
-    .tuto {
+    .S1-tuto {
         padding-top: 130px;
         padding-bottom: 80px;
     }
     .range {
         padding: 130px;
     }
-    #actionOk {
+    #SX-action {
         width: 3rem;
         left: 15px;
         bottom: 40px;
@@ -238,21 +314,21 @@ svg {
     }
 
     /* SCREEN 2 */
-    .titleSecondScreen {
+    .S2-title {
         font-size: 2.5rem;
         padding-top: 80px;
         margin-left: 0;
     }
-    .subtitleSecondScreen {
+    .S2-subtitle {
         font-size: 1.5rem;
         margin-left: 0;
     }
-    .catSecondScreen {
+    .S2-cat {
         width: 85vw;
         bottom: 13vw;
         left: 7vw;
     }
-    .catTailSecondScreen {
+    .S2-catTail {
         width: 40vw;
         bottom: 15vw;
         left: 58vw;
@@ -274,52 +350,86 @@ svg {
     }
 
     /* SCREEN 3 */
-    .catThirdScreen {
+    .S3-cat {
         width: 80vw;
         bottom: 3vw;
         left: 3vw;
     }
-    .catTailThirdScreen {
+    .S3-catTail {
         width: 20vw;
         bottom: 12vw;
         left: 78vw;
     }
 
     /* SCREEN 5 */
-    .angryCat {
+    .S5-cat {
         max-width: initial !important;
         width: 1100px;
-        /* height: auto; */
         top: -450px;
         left: 0px;
     }
     .angryTitle, .angrySubtitle {
         margin-left: 350px;
     }
-    
+    #afterAngry {
+        top: -670px;
+        left: 170px;
+    }
+    .S5-eclair1 {
+        width: 50px;
+        top: -275px;
+        left: 20vh;
+    }
+    .S5-eclair2 {
+        width: 65px;
+        top: -270px;
+        left: 7vh;
+    }
+    .S5-pfff {
+        width: 150px;
+        top: 20vh;
+        left: 7vw;
+    }
 }
 
 /* Extra small (xs) */
 @media (max-width: 576px) {
-    /* SCREEN 1*/
-    .title {
-        padding-top: 50px;
+    /* Commons */
+    .SX-title {
         font-size: 2rem;
+        padding-top: 50px;
+        margin-left: 0vw;
     }
-    .moustache {
+    .SX-subtitle {
+        font-size: 1.2rem;
+        padding-top: 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .SX-moustache {
         width: 30px;
         bottom: 45px;
     }
-    .subtitle {
+
+    /* SCREEN 1*/
+    .S1-title {
+        padding-top: 50px;
+        font-size: 2rem;
+    }
+    .S1-moustache {
+        width: 30px;
+        bottom: 45px;
+    }
+    .S1-subtitle {
         padding-top: 10px;
         font-size: 1.2rem;
     }
-    .tuto {
+    .S1-tuto {
         padding-top: 30px;
         padding-bottom: 10px;
         font-size: 2rem;
     }
-    #actionOk {
+    #SX-action {
         width: 1.5rem;
         left: 5px;
         bottom: 10px;
@@ -327,18 +437,18 @@ svg {
     }
 
     /* SCREEN 2 */
-    .titleSecondScreen {
+    .S2-title {
         margin-left: 0vw;
     }
-    .subtitleSecondScreen {
+    .S2-subtitle {
         margin-left: 0px;
         margin-right: 0px;
     }
-    .catSecondScreen {
+    .S2-cat {
         bottom: 20px;
         left: 20px;
     }
-    .catTailSecondScreen {
+    .S2-catTail {
         width: 28vw;
         bottom: 30px;
         left: 215px;
@@ -359,39 +469,53 @@ svg {
     }
 
     /* SCREEN 3 */
-    .otherTitle {
-        font-size: 2rem;
-        padding-top: 50px;
-        margin-left: 0vw;
-    }
-    .otherSubtitle {
-        font-size: 1.2rem;
-        padding-top: 10px;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .otherMoustache {
-        width: 30px;
-        bottom: 45px;
-    }
-    .catThirdScreen {
+    .S3-cat {
         width: 80vw;
         bottom: 3vw;
         left: 3vw;
     }
-    .catTailThirdScreen {
+    .S3-catTail {
         width: 20vw;
         bottom: 12vw;
         left: 78vw;
     }
 
     /* SCREEN 5 */
-    .angryCat {
+    .S5-cat {
         max-width: initial !important;
         width: 300px;
         height: auto;
         top: 10px;
         left: 0px;
+    }
+    #afterAngry {
+        width: 100vw !important;
+        top: 0px;
+        left: 0px;
+    }
+    .S5-subtitle {
+        padding-top: 0;
+    }
+    .S5-eclair1 {
+        width: 20px;
+        top: 0;
+        left: 90px;
+    }
+    .S5-eclair2 {
+        width: 27px;
+        top: 0;
+        left: 30px;
+    }
+    .S5-pfff {
+        width: 50px;
+        top: 150px;
+        left: 8vw;
+    }
+}
+/* Adaptation pour le défilement des petits écrans */
+@media (max-height: 600px) {
+    html {
+        overflow-y: auto;
     }
 }
 
@@ -402,7 +526,7 @@ svg {
 }
 
 #firstScreen {
-    display: none !important;
+    /* display: none !important; */
 }
 #secondScreen {
     display: none !important;
@@ -414,7 +538,7 @@ svg {
     display: none !important;
 }
 #fifthScreen {
-    /* display: none !important; */
+    display: none !important;
 }
 #sixthScreen {
     display: none !important;

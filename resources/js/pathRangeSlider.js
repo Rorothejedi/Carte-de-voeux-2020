@@ -50,7 +50,7 @@ function update() {
     if (P.x > 0)
         $( ".circle" ).removeClass("circleAnimation");
     if (P.x >= 500) {
-        $( "#actionOk" ).hide().css("visibility", "visible").fadeIn();
+        $( "#SX-action" ).hide().css("visibility", "visible").fadeIn();
         drag[0].disable();
         $( "#nextTest" ).click();
     }
