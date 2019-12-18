@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div id="firstScreen" class="text-center">
+    <div id="S1" class="text-center">
         <h2 class="S1-title">
             <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="S1-moustache" />
             Bienvenue...
@@ -22,7 +22,7 @@
         <div class="range">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="700px" height="100%" viewBox="0 0 500 150" class="img-fluid">
                 <defs>
-                    <pattern id="image" height="100%" width="100%" viewBox="0 0 500 500">
+                    <pattern id="S1-arrow" height="100%" width="100%" viewBox="0 0 500 500">
                         <image width="500" height="500" xlink:href="./resources/svg/bouton-fleche-droite.svg"></image>
                     </pattern>
                 </defs>
@@ -33,7 +33,7 @@
                 />
                 <!-- Real path -->
                 <path 
-                    id="path"
+                    id="S1-path"
                     d="M0 0 700 0"
                 />
                 <!-- Target -->
@@ -46,12 +46,12 @@
                 />
                 <!-- Handle circle -->
                 <circle 
-                    id="circle"
+                    id="S1-circle"
                     r="30" 
                     cx="0" 
                     cy="0"
-                    fill="url(#image)"
-                    class="circle animated circleAnimation"
+                    fill="url(#S1-arrow)"
+                    class="S1-circle animated circleAnimation"
                 />
             </svg>
             <img id="S1-action" src="./resources/svg/action-validee.svg" alt="Action validée" />
@@ -59,7 +59,7 @@
     </div>
 
     <!-- class="text-center screen animated slideInUp" -->
-    <div id="secondScreen"  class="screen text-center">
+    <div id="S2"  class="screen text-center animated">
         <h2 class="S1-title S2-title">
             <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="SX-moustache S2-moustache" />
             C’est l’histoire...
@@ -73,13 +73,44 @@
             <img class="rrrTwo animated" src="./resources/svg/Rrr.svg" alt="Rrr">
             <img class="rrrThree animated " src="./resources/svg/Rrr.svg" alt="Rrr">
         </div>
-        <div >
+        <div>    
             <img class="S2-cat" src="./resources/svg/ecran2-chat.svg" alt="Chat qui dors" />
             <img class="S2-catTail" src="./resources/svg/ecran2-queueduchat.svg" alt="Queue du chat qui dors" />
-        </div >
+        </div>
+        
+        <div class="S2-range" class="img-fluid">
+            <svg class="S2-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="700px" height="100%" viewBox="0 0 655 500" class="img-fluid">
+                <defs>
+                    <pattern id="S2-arrow" height="100%" width="100%" viewBox="0 0 655 655">
+                        <image width="655" height="655" xlink:href="./resources/svg/bouton-fleche-droite.svg"></image>
+                    </pattern>
+                </defs>
+                <!-- Design path -->
+                <path class="path" d="M 100 240 C 350 150 500 200 565 270" />
+                <!-- Real path -->
+                <path id="S2-path" d="M 50 260 C 350 150 500 200 600 310" />
+                <!-- Target -->
+                <circle 
+                    id="target"
+                    r="32"
+                    cx="600"
+                    cy="310"
+                    class="target"
+                />
+                <!-- Handle circle -->
+                <circle 
+                    id="S2-circle"
+                    r="32" 
+                    cx="50" 
+                    cy="260"
+                    fill="url(#S2-arrow)"
+                />
+            </svg>
+            <img id="S2-action" src="./resources/svg/action-validee.svg" alt="Action validée" />
+        </div>
     </div>
 
-    <div id="thirdScreen" class="screen text-center animated">
+    <div id="S3" class="screen text-center animated">
         <h2 class="SX-title">
             <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="SX-moustache" />
             Evidemment...
@@ -93,9 +124,46 @@
             <img class="S3-cat" src="./resources/svg/ecran3-chat.svg" alt="Chat qui dors sur le dos" />
             <img class="S3-catTail" src="./resources/svg/ecran3-queueduchat.svg" alt="Queue du cat qui dors sur le dos" />
         </div>
+        <div id="rrr">
+            <img class="rrrOne animated" src="./resources/svg/Rrr.svg" alt="Rrr">
+            <img class="rrrTwo animated" src="./resources/svg/Rrr.svg" alt="Rrr">
+            <img class="rrrThree animated " src="./resources/svg/Rrr.svg" alt="Rrr">
+        </div>
+
+        <div class="S3-range" class="img-fluid">
+            <svg class="S3-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="710px" height="100%" viewBox="0 0 690 500" class="img-fluid">
+                <defs>
+                    <pattern id="S3-arrow" height="100%" width="100%" viewBox="0 0 690 690">
+                        <image width="690" height="690" xlink:href="./resources/svg/bouton-fleche-droite.svg"></image>
+                    </pattern>
+                </defs>
+                <!-- Design path -->
+                <path class="path" d="M 200 250 Q 300 200 400 200 " />
+                <!-- Real path -->
+                <path id="S3-path" d="M 150 275 Q 300 200 455 200 " />
+                <!-- Target -->
+                <circle 
+                    id="target"
+                    r="32"
+                    cx="455"
+                    cy="200"
+                    class="target"
+                />
+                <!-- Handle circle -->
+                <circle 
+                    id="S3-circle"
+                    r="32" 
+                    cx="150" 
+                    cy="275"
+                    fill="url(#S3-arrow)"
+                />
+            </svg>
+            <img id="S3-action" src="./resources/svg/action-validee.svg" alt="Action validée" />
+        </div>
+
     </div>
 
-    <div id="fourthScreen" class="screen text-center animated">
+    <div id="S4" class="screen text-center animated">
         <h2 class="SX-title">
             <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="SX-moustache" />
             Et puis un jour...
@@ -110,7 +178,7 @@
         </div>
     </div>
 
-    <div id="fifthScreen" class="screen text-center animated">
+    <div id="S5" class="screen text-center animated">
         <h2 class="SX-title S5-title">
             <img src="./resources/svg/moustache-titres.svg" alt="Moustache en colère !" class="SX-moustache S5-moustache" />
             Wuow !!!!!
@@ -138,7 +206,7 @@
         </div>
     </div>
 
-    <div id="sixthScreen" class="screen text-center animated">
+    <div id="S6" class="screen text-center animated">
         <h2 class="SX-title">
             <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="SX-moustache" />
             Et bien...
@@ -168,7 +236,7 @@
 
     </div>
 
-    <div id="S7" class="screen text-center animated d-flex flex-column">
+    <div id="S7" class="screen S7-display text-center animated">
         <section class="d-flex flex-column justify-content-center">
             <div class="S7-ornement d-flex justify-content-center">
                 <img class="S7-rightMoustache" src="./resources/svg/moustache-titres.svg" alt="Ornement" />
@@ -258,6 +326,26 @@
        </footer>
     </div>
 
+    <!-- Popup -->
+    <div class="container">
+        <div class="popup" role="dialog">
+            <div class="popup-content">
+                <div class="d-flex justify-content-end">
+                    <span class="close-button-popup close hairline"></span>
+                </div>
+                <div class="px-5 mx-5 text-center">
+                    <h2 id="popupTitle"></h2>
+                </div>
+                <div class="row popupDivContent">
+                    <div class="col-sm-12 my-auto">
+                        <p id="popupContent" class="text-center"></p>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+    
+
     <!-- Button de test -->
     <button id="nextTest" class="d-none">Next</button>
    
@@ -270,8 +358,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/utils/Draggable.min.js"></script>
     
-    <script src="./resources/js/screenChange.js"></script>
+    <script src="./resources/js/modal.js"></script>
+    <script src="./resources/js/animations.js"></script>
     <script src="./resources/js/pathRangeSlider.js"></script>
+    <script src="./resources/js/screenChange.js"></script>
 </body>
 
 </html>

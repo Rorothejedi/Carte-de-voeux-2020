@@ -30,7 +30,7 @@
 html { 
     margin: 0;
     padding: 0;
-    /* overflow-y: hidden;  */
+    overflow-y: hidden; 
 }
 body {
     height: 100vh;
@@ -93,6 +93,9 @@ a:link {
     line-height: 3.5rem;
     font-weight: 500;
 }
+.S1-circle {
+    animation: 1s infinite alternate ease;
+}
 
 /* SCREEN 2 */
 .S2-title {
@@ -114,6 +117,7 @@ a:link {
     position: absolute;
     bottom: 20px;
     left: 10vw;
+    z-index: -999;
 }
 .S2-catTail {
     width: 28vw;
@@ -232,6 +236,11 @@ a:link {
 }
 
 /* SCREEN 7 */
+.S7-display {
+    display: flex;
+    flex-direction: column;
+}
+
 .S7-rightMoustache, .S7-leftMoustache {
     width: 50px;
 }
@@ -328,6 +337,78 @@ footer {
     background-color: var(--main-color);
 }
 
+/* POPUP */
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(17, 19, 27, 0.85);
+    color: var(--bg-color);
+    padding: 1rem 1.5rem;
+    height: 70vh;
+}
+.close-button-popup {
+    cursor: pointer;
+}
+.show-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+.close {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    transform: rotateX(30deg);
+}
+.close::before, .close::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: var(--bg-color);
+}
+.close::before {
+    transform: rotate(45deg);
+}
+.close::after {
+    transform: rotate(-45deg);
+}
+.close.hairline::before, .close.hairline::after {
+    height: 1px;
+}
+#popupTitle {
+    font-family: "LeckerliOneRegular", serif;
+    font-size: 2.5rem;
+}
+#popupContent {
+    font-family: "RobotoThin", sans-serif;
+    font-size: 1.3rem;
+    height: 100%;
+}
+.popupDivContent {
+    height: 50vh;
+}
+
+
 
 /* ---------------------------------------------------- */
 
@@ -345,10 +426,10 @@ svg {
     stroke-dasharray: 8,7;
     stroke-width: 1.9;
     stroke-linecap: round;
+    /*add*/
+    fill: transparent;
 }
-.circle {
-    animation: 1s infinite alternate ease;
-}
+
 .target {
     animation: 1s infinite 0.5s alternate ease;
     fill: var(--bg-color);
@@ -364,6 +445,40 @@ svg {
     visibility: hidden;
 }
 
+#S2-action {
+    width: 3rem;
+    position: relative;
+    top: 15vw;
+    left: 21vw;
+    visibility: hidden;
+}
+.S2-range {
+    white-space: nowrap;
+}
+.S2-svg {
+    position: absolute;
+    top: -5vw;
+    left: 35vw;
+}
+#S2-path, #S3-path {
+  fill: transparent;  
+}
+.S3-svg {
+    position: absolute;
+    top: -1vw;
+    left: 32vw;
+}
+
+#S3-action {
+    width: 3rem;
+    position: relative;
+    top: 9vw;
+    left: 9vw;
+    visibility: hidden;
+}
+
+
+
 /* Animations */
 .targetAnimation, .circleAnimation {
     animation-name: fadeIn;
@@ -377,6 +492,26 @@ svg {
 
 /* 4K Screen */
 @media (min-width: 2560px) {
+    /* SCREEN 2 */
+    .S2-svg {
+        top: -2vw;
+        left: 40vw;
+    }
+    #S2-action {
+        top: 23vw;
+        left: 17vw;
+    }
+
+    /* SCREEN 3 */
+    .S3-svg {
+        top: 2vw;
+        left: 36vw;
+    }
+    #S3-action {
+        top: 20vw;
+        left: 7vw;
+    }
+
     /* SCREEN 5 */
     #S5-after {
         top: -950px;
@@ -414,6 +549,7 @@ svg {
     }
 }
 
+
 /* Ecran medium (md) */
 @media (min-width: 1024px) and (max-width: 1919px) {
     /* Commons */
@@ -423,6 +559,27 @@ svg {
     .SX-subtitle {
         font-size: 1.3rem;
     }
+
+    /* SCREEN 2 */
+    .S2-svg {
+        top: 0vw;
+        left: 28vw;
+    }
+    #S2-action {
+        top: 25vw;
+        left: 385px;
+    }
+
+    /* SCREEN 3 */
+    .S3-svg {
+        top: 2vw;
+        left: 28vw;
+    }
+    #S3-action {
+        top: 13vw;
+        left: 230px;
+    }
+
     /* SCREEN 5 */
     .S5-eclair1 {
         top: -275px;
@@ -437,6 +594,7 @@ svg {
         top: 33vh;
         left: 7vw;
     }
+
     /* SCREEN 6 */
     .S6-cat { 
         width: 60vw;
@@ -508,16 +666,25 @@ svg {
     }
     .rrrOne {
         left: 8vw;
-        bottom: 45vh;
+        bottom: 60vh;
     }
     .rrrTwo {
-        left: 20vw;
-        bottom: 53vh;
+        left: 40vw;
+        bottom: 63vh;
     }
     .rrrThree {
-        left: 20vw;
-        bottom: 42vh;
+        left: 70vw;
+        bottom: 60vh;
     }
+    .S2-svg {
+        top: 3vw;
+        left: 5vw;
+    }
+    #S2-action {
+        top: 53vw;
+        left: 340px;
+    }
+    
 
     /* SCREEN 3 */
     .S3-cat {
@@ -529,6 +696,14 @@ svg {
         width: 20vw;
         bottom: 12vw;
         left: 78vw;
+    }
+    .S3-svg {
+        top: 18vw;
+        left: 15vw;
+    }
+    #S3-action {
+        top: 50vw;
+        left: 235px;
     }
 
     /* SCREEN 5 */
@@ -649,15 +824,26 @@ svg {
         width: 20vw;
     }
     .rrrOne {
-        bottom: 45vh;
+        bottom: 53vh;
     }
     .rrrTwo {
         left: 40vw;
-        bottom: 50vh;
+        bottom: 58vh;
     }
     .rrrThree {
         left: 70vw;
-        bottom: 47vh;
+        bottom: 50vh;
+    }
+    .S2-svg {
+        top: 45vh;
+        left: 8vw;
+        width: 300px;
+        height: auto;
+    }
+    #S2-action {
+        top: 41vh;
+        left: 140px;
+        width: 1.5rem;
     }
 
     /* SCREEN 3 */
@@ -670,6 +856,17 @@ svg {
         width: 20vw;
         bottom: 12vw;
         left: 78vw;
+    }
+    .S3-svg {
+        width: 400px;
+        height: auto;
+        top: 47vh;
+        left: 8vw;
+    }
+    #S3-action {
+        top: 35vh;
+        left: 140px;
+        width: 1.5rem;
     }
 
     /* SCREEN 5 */
@@ -751,29 +948,30 @@ svg {
 
 
 /* !!!!!!!!!!     TEST     !!!!!!!!!!!!! */
-.screen {
-    /* display: none; */
+/* .screen {
+    display: none;
+} */
+
+#S1 {
+    display: none !important;
+}
+#S2 {
+    display: none !important;
+}
+#S3 {
+    display: none !important;
+}
+/* #S4 {
+    display: none !important;
+} */
+#S5 {
+    display: none !important;
+}
+#S6 {
+    display: none !important;
+}
+#S7 {
+    display: none !important;
 }
 
-#firstScreen {
-    display: none !important;
-}
-#secondScreen {
-    display: none !important;
-}
-#thirdScreen {
-    display: none !important;
-}
-#fourthScreen {
-    display: none !important;
-}
-#fifthScreen {
-    display: none !important;
-}
-#sixthScreen {
-    display: none !important;
-}
-#lastScreen {
-    /* display: none !important; */
-}
 /*_____________________________________________*/

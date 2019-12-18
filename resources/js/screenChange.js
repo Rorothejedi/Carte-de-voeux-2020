@@ -1,22 +1,23 @@
 /*Gère le changement d'écran et les transitions*/
 
 const screens = [
-    "#firstScreen", 
-    "#secondScreen", 
-    "#thirdScreen", 
-    "#fourthScreen",
-    "#fifthScreen", 
-    "#sixthScreen", 
-    "#lastScreen"
+    "#S1", 
+    "#S2", 
+    "#S3", 
+    "#S4",
+    "#S5", 
+    "#S6", 
+    "#S7"
 ];
 // const lowSpeed = 1300;
 // const hightSpeed = 400;
 const slowSpeed = "slow";
 const hightSpeed = "fast";
-let i = 0;
+// let actualScreen = 0;
+let actualScreen = 3;
 
-// if (i === 0)
-//     $(screens[i++]).fadeIn(slowSpeed);
+if (actualScreen === 0)
+    $(screens[actualScreen++]).fadeIn(slowSpeed);
 
 
 // // A changer en fonction
@@ -27,17 +28,19 @@ let i = 0;
 //     });
 // });
 
-if (i === 0)
-    $(screens[i++]).fadeIn(slowSpeed);
+// 
 
 
 // A changer en fonction
 
 $( "#nextTest" ).click(() => {
     setTimeout(() => {
-        $(screens[i - 1]).fadeOut(slowSpeed,() => {
-            $(screens[i++]).show();
+        $(screens[actualScreen - 1]).fadeOut(slowSpeed,() => {
+            $(screens[actualScreen++]).show();
+            pathRangeSlider();
         });
     }, 300);
 });
+
+pathRangeSlider();
 
