@@ -30,7 +30,7 @@
 html { 
     margin: 0;
     padding: 0;
-    overflow-y: hidden; 
+    /* overflow-y: hidden;  */
 }
 body {
     height: 100vh;
@@ -39,11 +39,6 @@ body {
 }
 a:link {
     text-decoration: none;
-}
-footer {
-    background-color: var(--main-color);
-    width: 100vw;
-    height: 100%;
 }
 .screen {
     height: 100vh;
@@ -252,7 +247,7 @@ footer {
     margin: 10px 15px;
 }
 .S7-ornement {
-    margin: 40px auto 20px auto;
+    padding: 40px 0 20px 0;
 }
 .S7-title {
     padding-top: 0;
@@ -267,7 +262,6 @@ footer {
 .S7-team p {
     color: var(--main-color);
 }
-
 .S7-more h2 {
     font-size: 23px;
     color: var(--main-color);
@@ -278,7 +272,61 @@ footer {
     padding-top: 0;
     color: var(--main-color);
 }
-
+section {
+    min-height: 70vh;
+}
+footer {
+    background-color: var(--main-color);
+    width: 100%;
+}
+.S7-textFooter {
+    color: var(--bg-color);
+    font-family: "RobotoThin", sans-serif;
+}
+.S7-imgShare a img {
+    width: 50px;
+}
+.S7-imgShare a p {
+    margin-top: 5px;
+    font-size: 0.5rem;
+    color: var(--bg-color);
+    font-family: "RobotoThin", sans-serif;
+}
+.S7-imgShare {
+    width: 300px;
+}
+.S7-spanText {
+    font-size: 1.3rem;
+    font-family: "LeckerliOneRegular", serif;
+}
+.S7_logoFlores a img {
+    width: 150px;
+}
+.S7-contact a img {
+    width: 50px;
+}
+.S7-mentions p {
+    font-family: "RobotoThin", sans-serif;
+    font-size: 0.65rem;
+    color: var(--bg-color);
+    margin-bottom: 0;
+}
+.S7-mentions p a {
+    font-family: "LeckerliOneRegular", serif;
+    color: var(--bg-color);
+}
+.row {
+    margin-left: 0;
+}
+.S7-leftFooter, .S7-rightFooter, .S7-centerFooter {
+    padding-bottom: -16vh;
+    height: 80%;
+    background-color: var(--main-color);
+}
+.S7-mentions {
+    height: 20%;
+    background-color: var(--main-color);
+}
 
 
 /* ---------------------------------------------------- */
@@ -406,6 +454,14 @@ svg {
     }
 }
 
+/* LANDSCAPE Tablette et smartphone */
+@media (max-width: 1024px) and (orientation: landscape) {
+    /* SCREEN 7 */
+    section {
+        min-height: auto;
+    }
+}
+
 /* Small (sm) */
 @media (min-width: 577px) and (max-width: 768px) {
     /* SCREEN 1*/
@@ -519,6 +575,12 @@ svg {
     #S6-after {
         top: 50vw;
         left: 20vw;
+    }
+
+    /* SCREEN 7 */
+    .S7-leftFooter, .S7-rightFooter, .S7-centerFooter {
+        padding-top: 15vh;
+        height: 20%;
     }
 }
 
@@ -663,6 +725,21 @@ svg {
     }
     .S6-afterSubtitle {
         padding-top: 0 ;
+    }
+
+    /* SCREEN 7 */
+    section {
+        min-height: auto;
+    }
+    .S7-text {
+        width: auto;
+    }
+    .S7-title {
+        padding-top: 0;
+    }
+    .S7-leftFooter, .S7-rightFooter, .S7-centerFooter {
+        padding-top: 25vh;
+        height: 5%;
     }
 }
 /* Adaptation pour le défilement des petits écrans */
