@@ -4,8 +4,7 @@ const pathRangeSlider = () => {
     let path;
     let circle;
     let countCaress = 0;
-
-    let reverseDrag = false;
+    let reverseDrag;
     
     if (actualScreen === 1) {
         path = document.getElementById("S1-path");
@@ -19,6 +18,13 @@ const pathRangeSlider = () => {
     } else if (actualScreen === 4) {
         path = document.getElementById("S4-path");
         circle = document.getElementById("S4-circle");
+        reverseDrag = true;
+    } else if (actualScreen === 5) {
+        path = document.getElementById("S5-path");
+        circle = document.getElementById("S5-circle");
+    } else if (actualScreen === 6) {
+        path = document.getElementById("S6-path");
+        circle = document.getElementById("S6-circle");
     }
     
     const W = path.getBoundingClientRect().width;
@@ -41,16 +47,14 @@ const pathRangeSlider = () => {
 
         // console.log("P.x : ",P.x)
         // console.log("P.y : ",P.y)
-        // console.log("pathLength : ", pathLength)
+        console.log("pathLength : ", pathLength)
         // console.log(W)
-
         console.log(P)
-
         
-        if (actualScreen === 4 && !reverseDrag) {
+        if (actualScreen === 4 && reverseDrag) {
             // Direction inverse
             TweenLite.set(drag[0].target, { x: 600, y: 100, onUpdate:drag[0].update, onUpdateScope:drag[0]});
-            reverseDrag = true;
+            reverseDrag = false;
         } else {
             // Direction normal
             TweenLite.set(circle, { attr: { cx: P.x, cy: P.y } });
@@ -83,7 +87,16 @@ const pathRangeSlider = () => {
                     nextScreen();
                 }
             } else if (actualScreen === 4 && P.x === 50) {
-                console.log('TRAVAIL TERMINE !');
+                drag[0].disable();
+                nextScreen();
+            } else if (actualScreen === 5 && P.x === 500) {
+                $( "#S5-action" ).css("visibility", "visible").fadeIn();
+                drag[0].disable();
+                nextScreen();
+            } else if (actualScreen === 6 && P.x === 500) {
+                $( "#S6-action" ).css("visibility", "visible").fadeIn();
+                drag[0].disable();
+                nextScreen();
             }
         }
     };

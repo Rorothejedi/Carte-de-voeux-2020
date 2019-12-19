@@ -176,7 +176,6 @@
             <img class="S2-cat" src="./resources/svg/ecran2-chat.svg" alt="Chat qui dors" />
             <img class="S2-catTail" src="./resources/svg/ecran2-queueduchat.svg" alt="Queue du chat qui dors" />
         </div>
-
         <div class="S2-range" class="img-fluid">
             <svg class="S2-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="700px" height="100%" viewBox="0 0 655 500" class="img-fluid">
                 <defs>
@@ -185,10 +184,8 @@
                     </pattern>
                 </defs>
                 <!-- Design path -->
-                <!-- <path class="path" d="M 565 270 C 500 200 350 150 100 240" /> -->
                 <path class="path" d="M 100 240 C 350 150 500 200 565 270" />
                 <!-- Real path -->
-                <!-- <path id="S4-path" d="M 600 310 C 500 200 350 150 50 260" /> -->
                 <path id="S4-path" d="M 50 260 C 350 150 500 200 600 310" />
                 <!-- Target -->
                 <circle 
@@ -236,6 +233,43 @@
             <h3 class="SX-subtitle S5-afterSubtitle animated slow delay-1s">
                 ...Voulez-vous connaître <span class="underline">la suite ?</span>
             </h3>
+            <div class="S5-range">
+                <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" width="500px" height="100%" viewBox="0 0 500 150" class="img-fluid">
+                    <defs>
+                        <pattern id="S5-arrow" height="100%" width="100%" viewBox="0 0 500 500">
+                            <image width="500" height="500" xlink:href="./resources/svg/bouton-fleche-droite.svg"></image>
+                        </pattern>
+                    </defs>
+                    <!-- Design path -->
+                    <path
+                        class="path"
+                        d="M75 0 425 0"
+                    />
+                    <!-- Real path -->
+                    <path 
+                        id="S5-path"
+                        d="M0 0 500 0"
+                    />
+                    <!-- Target -->
+                    <circle 
+                        id="target"
+                        r="30"
+                        cx="500"
+                        cy="0"
+                        class="target animated targetAnimation"
+                    />
+                    <!-- Handle circle -->
+                    <circle 
+                        id="S5-circle"
+                        r="30" 
+                        cx="0" 
+                        cy="0"
+                        fill="url(#S5-arrow)"
+                        class="S1-circle animated circleAnimation"
+                    />
+                </svg>
+                <img id="S5-action" src="./resources/svg/action-validee.svg" alt="Action validée" />
+            </div>
         </div>
     </div>
 
@@ -263,6 +297,43 @@
             <h3 class="SX-subtitle S5-afterSubtitle S6-afterSubtitle animated slow delay-1s">
                 ...La sentez-vous venir ?
             </h3>
+            <div class="S6-range">
+                <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" width="500px" height="100%" viewBox="0 0 500 150" class="img-fluid">
+                    <defs>
+                        <pattern id="S6-arrow" height="100%" width="100%" viewBox="0 0 500 500">
+                            <image width="500" height="500" xlink:href="./resources/svg/bouton-fleche-droite.svg"></image>
+                        </pattern>
+                    </defs>
+                    <!-- Design path -->
+                    <path
+                        class="path"
+                        d="M75 0 425 0"
+                    />
+                    <!-- Real path -->
+                    <path 
+                        id="S6-path"
+                        d="M0 0 500 0"
+                    />
+                    <!-- Target -->
+                    <circle 
+                        id="target"
+                        r="30"
+                        cx="500"
+                        cy="0"
+                        class="target animated targetAnimation"
+                    />
+                    <!-- Handle circle -->
+                    <circle 
+                        id="S6-circle"
+                        r="30" 
+                        cx="0" 
+                        cy="0"
+                        fill="url(#S6-arrow)"
+                        class="S1-circle animated circleAnimation"
+                    />
+                </svg>
+                <img id="S6-action" src="./resources/svg/action-validee.svg" alt="Action validée" />
+            </div>
         </div>
 
         <!-- ... -->

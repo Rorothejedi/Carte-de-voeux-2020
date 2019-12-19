@@ -30,7 +30,7 @@
 html { 
     margin: 0;
     padding: 0;
-    overflow-y: hidden; 
+    /* overflow-y: hidden;  */
 }
 body {
     height: 100vh;
@@ -175,14 +175,14 @@ a:link {
     position: relative;
     z-index: -10;
     height: 100vh;
-    top: -350px;
+    top: -320px;
     left: -10px;
 }
 #S5-after {
-    width: 400px !important;
+    width: 500px !important;
     position: relative;
-    top: -750px;
-    left: 65vw;
+    top: -720px;
+    left: 62vw;
 }
 .S5-afterSubtitle {
     padding-top: 0;
@@ -195,12 +195,12 @@ a:link {
 }
 .S5-eclair1 {
     width: 4%;
-    top: -290px;
+    top: -280px;
     left: 37vh;
 }
 .S5-eclair2 {
     width: 6%;
-    top: -280px;
+    top: -250px;
     left: 20vh;
 }
 .S5-pfff {
@@ -476,6 +476,26 @@ svg {
     visibility: hidden;
 }
 
+.S5-range, .S6-range {
+    white-space: nowrap;
+    position: relative;
+    padding-top: 50px;
+}
+
+#S5-action, #S6-action  {
+    width: 3rem;
+    position: relative;
+    top: -1vw;
+    left: 1vw;
+}
+#S5-action {
+    visibility: hidden;
+}
+#S6-action {
+    visibility: hidden;
+}
+
+
 
 
 /* Animations */
@@ -514,7 +534,7 @@ svg {
     /* SCREEN 5 */
     #S5-after {
         top: -950px;
-        left: 70vw;
+        left: 67vw;
     }
     .S5-title, .S5-subtitle {
         position: relative;
@@ -593,6 +613,12 @@ svg {
         top: 33vh;
         left: 7vw;
     }
+    #S5-after {
+        width: 400px !important;
+        top: -680px;
+        left: 62vw;
+    }
+ 
 
     /* SCREEN 6 */
     .S6-cat { 
@@ -606,6 +632,7 @@ svg {
         left: 14vw;
     }
     #S6-after {
+        width: 400px !important;
         top: 250px;
         left: 60vw;
     }
@@ -716,8 +743,8 @@ svg {
         margin-left: 350px;
     }
     #S5-after {
-        top: -670px;
-        left: 170px;
+        top: -600px;
+        left: 130px;
     }
     .S5-eclair1 {
         width: 50px;
@@ -734,6 +761,9 @@ svg {
         top: 20vh;
         left: 7vw;
     }
+    #S5-action {
+        top: -4vw;
+    }
 
     /* SCREEN 6 */
     .S6-cat {
@@ -747,8 +777,11 @@ svg {
         left: 28.7vw;
     }
     #S6-after {
-        top: 50vw;
+        top: 55vw;
         left: 20vw;
+    }
+    #S6-action {
+        top: -3vh;
     }
 
     /* SCREEN 7 */
@@ -877,9 +910,9 @@ svg {
         left: 0px;
     }
     #S5-after {
-        width: 100vw !important;
+        width: 80vw !important;
         top: 0px;
-        left: 0px;
+        left: 35px;
     }
     .S5-subtitle {
         padding-top: 0;
@@ -899,6 +932,10 @@ svg {
         top: 150px;
         left: 8vw;
     }
+    #S5-action {
+        width: 2rem;
+        top: -4vw;
+    }
 
     /* SCREEN 6 */
     .S6-cat {
@@ -912,15 +949,24 @@ svg {
         left: 29vw;
     }
     #S6-after {
-        width: auto !important;
+        width: 90vw !important;
         top: 55vw;
-        left: 0vw;
+        left: 5vw;
     }
     .S6-afterTitle {
         font-size: 1.6rem;
     }
     .S6-afterSubtitle {
         padding-top: 0 ;
+    }
+    #S6-action {
+        width: 2rem;
+        top: -3vh;
+    }
+    .S6-range {
+        left: 20px;
+        width: 270px;
+        padding-bottom: 20px;
     }
 
     /* SCREEN 7 */
@@ -939,7 +985,7 @@ svg {
     }
 }
 /* Adaptation pour le défilement des petits écrans */
-@media (max-height: 600px) {
+@media (max-height: 640px) {
     html {
         overflow-y: auto;
     }
@@ -947,11 +993,11 @@ svg {
 
 
 /* !!!!!!!!!!     TEST     !!!!!!!!!!!!! */
-.screen {
+/* .screen {
     display: none;
-}
+} */
 
-/* #S1 {
+#S1 {
     display: none !important;
 }
 #S2 {
@@ -967,10 +1013,10 @@ svg {
     display: none !important;
 }
 #S6 {
-    display: none !important;
+    /* display: none !important; */
 }
 #S7 {
     display: none !important;
-} */
+}
 
 /*_____________________________________________*/

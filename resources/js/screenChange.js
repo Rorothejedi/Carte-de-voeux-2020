@@ -13,8 +13,8 @@ const screens = [
 // const hightSpeed = 400;
 const slowSpeed = "slow";
 const hightSpeed = "fast";
-let actualScreen = 0;
-// let actualScreen = 4;
+// let actualScreen = 0;
+let actualScreen = 6;
 
 if (actualScreen === 0)
     $(screens[actualScreen++]).fadeIn(slowSpeed);
