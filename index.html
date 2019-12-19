@@ -176,6 +176,39 @@
             <img class="S2-cat" src="./resources/svg/ecran2-chat.svg" alt="Chat qui dors" />
             <img class="S2-catTail" src="./resources/svg/ecran2-queueduchat.svg" alt="Queue du chat qui dors" />
         </div>
+
+        <div class="S2-range" class="img-fluid">
+            <svg class="S2-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="700px" height="100%" viewBox="0 0 655 500" class="img-fluid">
+                <defs>
+                    <pattern id="S4-arrow" height="100%" width="100%" viewBox="0 0 655 655">
+                        <image width="655" height="655" xlink:href="./resources/svg/bouton-fleche-gauche.svg"></image>
+                    </pattern>
+                </defs>
+                <!-- Design path -->
+                <!-- <path class="path" d="M 565 270 C 500 200 350 150 100 240" /> -->
+                <path class="path" d="M 100 240 C 350 150 500 200 565 270" />
+                <!-- Real path -->
+                <!-- <path id="S4-path" d="M 600 310 C 500 200 350 150 50 260" /> -->
+                <path id="S4-path" d="M 50 260 C 350 150 500 200 600 310" />
+                <!-- Target -->
+                <circle 
+                    id="target"
+                    r="32"
+                    cx="50"
+                    cy="260"
+                    class="target"
+                />
+                <!-- Handle circle -->
+                <circle 
+                    id="S4-circle"
+                    r="32" 
+                    cx="600" 
+                    cy="310"
+                    fill="url(#S4-arrow)"
+                />
+            </svg>
+            <!-- <img id="S2-action" src="./resources/svg/action-validee.svg" alt="Action validée" /> -->
+        </div>
     </div>
 
     <div id="S5" class="screen text-center animated">

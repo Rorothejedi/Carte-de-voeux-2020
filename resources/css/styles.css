@@ -460,7 +460,7 @@ svg {
     top: -5vw;
     left: 35vw;
 }
-#S2-path, #S3-path {
+#S2-path, #S3-path, #S4-path {
   fill: transparent;  
 }
 .S3-svg {
@@ -468,7 +468,6 @@ svg {
     top: -1vw;
     left: 32vw;
 }
-
 #S3-action {
     width: 3rem;
     position: relative;
@@ -948,11 +947,11 @@ svg {
 
 
 /* !!!!!!!!!!     TEST     !!!!!!!!!!!!! */
-/* .screen {
+.screen {
     display: none;
-} */
+}
 
-#S1 {
+/* #S1 {
     display: none !important;
 }
 #S2 {
@@ -961,9 +960,9 @@ svg {
 #S3 {
     display: none !important;
 }
-/* #S4 {
+#S4 {
     display: none !important;
-} */
+}
 #S5 {
     display: none !important;
 }
@@ -972,6 +971,6 @@ svg {
 }
 #S7 {
     display: none !important;
-}
+} */
 
 /*_____________________________________________*/

@@ -13,34 +13,20 @@ const screens = [
 // const hightSpeed = 400;
 const slowSpeed = "slow";
 const hightSpeed = "fast";
-// let actualScreen = 0;
-let actualScreen = 3;
+let actualScreen = 0;
+// let actualScreen = 4;
 
 if (actualScreen === 0)
     $(screens[actualScreen++]).fadeIn(slowSpeed);
 
-
-// // A changer en fonction
-
-// $( "#nextTest" ).click(() => {
-//     $(screens[i - 1]).fadeOut((i === 4) ? hightSpeed : slowSpeed, () => {
-//         $(screens[i++]).fadeIn((i === 5) ? hightSpeed : slowSpeed);
-//     });
-// });
-
-// 
-
-
-// A changer en fonction
-
-$( "#nextTest" ).click(() => {
+const nextScreen = () => {
     setTimeout(() => {
         $(screens[actualScreen - 1]).fadeOut(slowSpeed,() => {
             $(screens[actualScreen++]).show();
             pathRangeSlider();
         });
     }, 300);
-});
+}
 
 pathRangeSlider();
 
