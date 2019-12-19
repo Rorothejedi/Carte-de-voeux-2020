@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./vendor/animate.css">
     <link rel="stylesheet" href="./resources/css/styles.css">
-    <title>Florès | Carte de voeux 2020</title>
+    <title>Florès | Voeux 2020</title>
 </head>
 
 <body>
@@ -286,35 +286,32 @@
         </h3>
         <div class="S6-img">
             <img class="S6-cat" src="./resources/svg/ecran6-chat.svg" alt="Chat qui joue" />
-            <img class="S6-catTail" src="./resources/svg/ecran6-patteduchat.svg" alt="Patte du chat" />
+            
         </div>
 
         <div id="S6-after">
             <h2 class="SX-title S6-afterTitle">
-                <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="SX-moustache" />
+                <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="SX-moustache S6-moustache" />
                 La morale de cette histoire
             </h2>
             <h3 class="SX-subtitle S5-afterSubtitle S6-afterSubtitle animated slow delay-1s">
                 ...La sentez-vous venir ?
             </h3>
             <div class="S6-range">
-                <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" width="500px" height="100%" viewBox="0 0 500 150" class="img-fluid">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500px" height="100%" viewBox="0 0 500 150" class="img-fluid">
                     <defs>
                         <pattern id="S6-arrow" height="100%" width="100%" viewBox="0 0 500 500">
                             <image width="500" height="500" xlink:href="./resources/svg/bouton-fleche-droite.svg"></image>
                         </pattern>
                     </defs>
-                    <!-- Design path -->
                     <path
                         class="path"
                         d="M75 0 425 0"
                     />
-                    <!-- Real path -->
                     <path 
                         id="S6-path"
                         d="M0 0 500 0"
                     />
-                    <!-- Target -->
                     <circle 
                         id="target"
                         r="30"
@@ -322,7 +319,6 @@
                         cy="0"
                         class="target animated targetAnimation"
                     />
-                    <!-- Handle circle -->
                     <circle 
                         id="S6-circle"
                         r="30" 
@@ -335,9 +331,8 @@
                 <img id="S6-action" src="./resources/svg/action-validee.svg" alt="Action validée" />
             </div>
         </div>
-
-        <!-- ... -->
-
+        <img id="S6-catTail" class="ball"  src="./resources/svg/ecran6-patteduchat.svg" alt="Patte du chat" />
+        <img id='forground' class='ball' src="./resources/svg/ecran6-balle.svg" height="130" width="130">
     </div>
 
     <div id="S7" class="screen S7-display text-center animated">
@@ -448,7 +443,6 @@
             </div>
         </div>
     </div>
-    
 
     <!-- Button de test -->
     <button id="nextTest" class="d-none">Next</button>
@@ -465,6 +459,8 @@
     <script src="./resources/js/modal.js"></script>
     <script src="./resources/js/animations.js"></script>
     <script src="./resources/js/pathRangeSlider.js"></script>
+    <script src="./resources/js/stats.js"></script>
+    <script src="./resources/js/utils.js"></script>
     <script src="./resources/js/screenChange.js"></script>
 </body>
 

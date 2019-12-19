@@ -23,6 +23,7 @@ const pathRangeSlider = () => {
         path = document.getElementById("S5-path");
         circle = document.getElementById("S5-circle");
     } else if (actualScreen === 6) {
+        dragBall();
         path = document.getElementById("S6-path");
         circle = document.getElementById("S6-circle");
     }
@@ -70,8 +71,6 @@ const pathRangeSlider = () => {
                 drag[0].disable();
                 nextScreen();
             } else if (actualScreen === 3 && P.x === 455) {
-                // ou === 455 A tester
-                console.log('test')
                 drag[0].disable();
                 $( "#S3-action" ).css("visibility", "visible").fadeIn();
                 if (countCaress < 2) {
@@ -98,6 +97,28 @@ const pathRangeSlider = () => {
                 drag[0].disable();
                 nextScreen();
             }
+        }
+    };
+}
+
+const dragBall = () => {
+
+    TweenLite.set('.ball',{ xPercent:-50, yPercent:-50 });
+    Draggable.create('#forground',{
+        bounds: window,
+        onDrag: Update
+    });
+
+    function Update() {
+        const X = this.x;
+        const Y = this.y;
+        const W = window.innerWidth;
+
+        if (X < W / 5) {
+            TweenLite.set('#S6-catTail',{ x: X * 0.03, y: Y * 0.05 });
+        } else {
+            TweenLite.set('#S6-catTail',{ y: Y * 0.05 });
+
         }
     };
 }

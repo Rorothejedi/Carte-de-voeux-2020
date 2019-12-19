@@ -24,9 +24,14 @@ const nextScreen = () => {
         $(screens[actualScreen - 1]).fadeOut(slowSpeed,() => {
             $(screens[actualScreen++]).show();
             pathRangeSlider();
+            if (actualScreen === 7)
+                stats();
         });
     }, 300);
 }
 
 pathRangeSlider();
+
+
+
 
