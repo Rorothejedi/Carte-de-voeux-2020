@@ -16,8 +16,8 @@ const nextScreen = () => {
         $(screens[actualScreen - 1]).fadeOut((actualScreen === 4) ? 'fast' : 'slow',() => {
             $(screens[actualScreen++]).show();
             if (actualScreen === 7) {
-                // stats();
                 $( '#S7' ).toggleClass('d-none').toggleClass('d-flex');
+                $( '.screen' ).css('height', 'auto');
             } else {
                 pathRangeSlider();
             }

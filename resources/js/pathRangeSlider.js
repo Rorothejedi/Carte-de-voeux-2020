@@ -1,6 +1,7 @@
 /* Gère l'input range */
 
 const isChrome = (typeof window.chrome === "object" && navigator.appVersion.indexOf('Edge') === -1);
+let modalTimer;
 let fadeAfterTouchBall = false;
 
 const pathRangeSlider = () => {
@@ -40,7 +41,7 @@ const pathRangeSlider = () => {
     const W = path.get(0).getBoundingClientRect().width;
     const pathLength = path.get(0).getTotalLength();
     // Apparition modal au bout de 8 secondes
-    const modalTimer = setTimeout(toggleModal, 8000);
+    modalTimer = setTimeout(toggleModal, 8000);
     let div = document.createElement('div');
     const drag = Draggable.create(div, {
         type: 'x,y', 
@@ -53,10 +54,9 @@ const pathRangeSlider = () => {
     function update() {
         let P = path.get(0).getPointAtLength(this.x / W * pathLength);
         
-        // Clear du modal
+
         clearTimeout(modalTimer);
-        console.log("P.x : ", P.x)
-        
+        // console.log("P.x : ", P.x)  
         if (actualScreen === 4 && reverseDrag) {
             // Direction inverse
             TweenLite.set(drag[0].target, { x: 600, y: 100, onUpdate:drag[0].update, onUpdateScope:drag[0]});
@@ -91,26 +91,26 @@ const pathRangeSlider = () => {
             } else if (actualScreen === 3) {
                 if (P.x > 0)
                     $( ".S3-circle" ).removeClass("circleAnimation");
-
                 if ((isChrome && P.x === 455) || (!isChrome && P.x >= 450)) {
                     drag[0].disable();
-
                     $( "#S3-action" ).css("visibility", "visible").fadeIn();
                     $( '.S3-range' ).removeClass('delay-2s').removeClass('fadeIn');
-
                     if (countCaress === 0) {
                         $( '#rrr2' ).show(() => {
-                            $( '.rrrOne2' ).fadeIn();
                             $( '.S2-catTail ').removeClass('S2-animCatTail');
                             $( '.S3-catTail' ).addClass('S3-animCatTail');
+                            $( '.rrrOne2' ).fadeIn(() => {
+                                modalTimer = setTimeout(toggleModal, 7000);
+                            });
                         });
                     } else if (countCaress === 1) {
-                        $( '.rrrTwo2' ).fadeIn();
+                        $( '.rrrTwo2' ).fadeIn(() => {
+                            modalTimer = setTimeout(toggleModal, 6000);
+                        });
                     } else if (countCaress === 2) {
                         $( '.rrrThree2' ).fadeIn();
                     }
                     if (countCaress < 2) {
-
                         $('.S3-range').fadeOut(('slow'), () => {
                             $( "#S3-action" ).hide();
                             TweenLite.set(div, {x: 0, y: 0 });
@@ -155,7 +155,7 @@ const dragBall = () => {
     let fadePaw = false;
     let touchBall = false;
 
-    TweenLite.set('.ball',{ xPercent:-50, yPercent:-50 });
+    TweenLite.set('.ball',{ xPercent: -50, yPercent: -50 });
     Draggable.create('#forground',{
         bounds: window,
         onDrag: Update
@@ -166,6 +166,7 @@ const dragBall = () => {
         const Y = this.y;
         const W = window.innerWidth;
 
+        clearTimeout(modalTimer);
         if (!fadePaw) {
             $( '#S6-catTail' ).removeClass('S6-transitionFade');
             fadePaw = true;
