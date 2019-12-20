@@ -56,7 +56,7 @@ const pathRangeSlider = () => {
         // Clear du modal
         // clearTimeout(modalTimer);
 
-        // console.log("P.x : ",P.x)
+        console.log("P.x : ", P.x)
         // console.log("P.y : ",P.y)
         // console.log("pathLength : ", pathLength)
         // console.log(W)

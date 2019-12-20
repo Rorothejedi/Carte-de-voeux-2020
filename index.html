@@ -21,26 +21,15 @@
         </h2>
         <h3 class="S1-subtitle">au royaume de l'expérienciel</h3>
         <p class="S1-tuto animated fadeIn delay-1s">Pour commencer<br />déplacez le bouton vers la droite</p>
-        <div class="range animated fadeIn delay-2s">
+        <!-- <div class="range animated fadeIn delay-2s">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="700px" height="100%" viewBox="0 0 500 150" class="img-fluid">
                 <defs>
                     <pattern id="S1-arrow" height="100%" width="100%" viewBox="0 0 500 500">
                         <image width="500" height="500" xlink:href="./resources/svg/bouton-fleche-droite.svg"></image>
                     </pattern>
                 </defs>
-                <!-- Design path -->
-                <path
-                    class="path"
-                    d="M75 0 425 0"
-                />
-                <!-- Real path -->
-                <path 
-                    id="S1-path"
-                    class="path realPath"
-                    d="M0 0 700 0"
-                    stroke-width="1"
-                />
-                <!-- Target -->
+                <path class="path" d="M75 0 425 0" />
+                <path id="S1-path" class="path realPath" d="M0 0 500 0" stroke-width="1" />
                 <circle 
                     id="target"
                     r="30"
@@ -48,7 +37,6 @@
                     cy="0"
                     class="target animated targetAnimation"
                 />
-                <!-- Handle circle -->
                 <circle 
                     id="S1-circle"
                     r="30" 
@@ -57,6 +45,20 @@
                     fill="url(#S1-arrow)"
                     class="S1-circle animated circleAnimation"
                 />
+            </svg>
+            <img id="S1-action" src="./resources/svg/action-validee.svg" alt="Action validée" />
+        </div> -->
+        <div class="S1-range animated fadeIn delay-2s">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500px" height="100%" viewBox="0 0 500 150" preserveAspectRatio="xMidYMid slice" class="img-fluid test">
+                <defs>
+                    <pattern id="S1-arrow" height="100%" width="100%" viewBox="0 0 500 500">
+                        <image width="500" height="500" xlink:href="./resources/svg/bouton-fleche-droite.svg"></image>
+                    </pattern>
+                </defs>
+                <path class="path" d="M75 0 425 0" />
+                <path id="S1-path" class="path realPath" d="M0 0 500 0" />
+                <circle id="target" class="target animated targetAnimation" r="30" cx="500" cy="0" />
+                <circle id="S1-circle" class="S1-circle animated circleAnimation" r="30" cx="0" cy="0" fill="url(#S1-arrow)" />
             </svg>
             <img id="S1-action" src="./resources/svg/action-validee.svg" alt="Action validée" />
         </div>
@@ -195,7 +197,7 @@
                 <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="SX-moustache" />
                 Oui mais...
             </h2>
-            <h3 class="SX-subtitle S5-afterSubtitle animated slow delay-1s">
+            <h3 class="SX-subtitle S5-afterSubtitle">
                 ...Voulez-vous connaître <span class="underline">la suite ?</span>
             </h3>
             <div class="S5-range">
@@ -220,7 +222,7 @@
             <img src="./resources/svg/moustache-titres.svg" alt="Moustache" class="SX-moustache" />
             Et bien...
         </h2>
-        <h3 class="SX-subtitle">
+        <h3 class="SX-subtitle animated textAnimation slow delay-1s">
             ...Le chat à présent complètement <span class="underline">réveillé,</span>
             <br />avec l’imprudent qui sans penser à mal
             <br />comme il l’avait toujours fait
@@ -264,7 +266,7 @@
                 <div id="S7-triangle"></div>
                 <img class="S7-leftMoustache" src="./resources/svg/moustache-titres.svg" alt="Ornement" />
             </div>
-            <div class="container-fluid mb-5">
+            <div class="container-fluid">
                 <h2 class="SX-title S7-title">
                     Mieux vaut choquer un court instant<br />que passer à côté d’un chouette changement
                 </h2>
@@ -279,13 +281,13 @@
                 </h2>
                 <div class="row justify-content-end animated fadeIn S7-lastDelay">
                     <div class="col-sm-12 col-md-6 col-lg-4">
-                        <a class="S7-team" href="https://flores-amo.fr/equipe/" target="_blank" title="Voir nos tête en vrai ?">
+                        <a class="S7-team grow" href="https://flores-amo.fr/equipe/" target="_blank" title="Voir nos tête en vrai ?">
                             <img class="img-fluid" src="./resources/png/illu-equipe-flores-team.png" alt="L'équipe Florès" />
                             <p>L'équipe Florès</p>
                         </a>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
-                        <a class="S7-more" href="https://flores-amo.fr/space-planning-faire-vachement-mieux-pour-vachement-moins-cher/" target="_blank" title="En savoir plus">
+                        <a class="S7-more grow" href="https://flores-amo.fr/space-planning-faire-vachement-mieux-pour-vachement-moins-cher/" target="_blank" title="En savoir plus">
                             <h2 class="SX-title text-left">
                                 En savoir plus
                             </h2>
@@ -304,26 +306,26 @@
                     <br />changement, <span class="S7-spanText">partagez largement</span>
                 </p>
                 <div class="d-flex justify-content-center align-self-center S7-imgShare row-fluid">
-                    <a class="col-3" href="https://www.facebook.com/index.php" title="Partager sur Facebook">
+                    <a class="col-3 grow" href="https://www.facebook.com/index.php" title="Partager sur Facebook">
                         <img src="./resources/png/picto-facebook.png" alt="Partager sur Facebook">
                         <p>FACEBOOK</p>
                     </a>
-                    <a class="col-3" href="https://twitter.com/" title="Partager sur Twitter">
+                    <a class="col-3 grow" href="https://twitter.com/" title="Partager sur Twitter">
                         <img src="./resources/png/picto-twitter.png" alt="Partager sur Twitter">
                         <p>TWITTER</p>
                     </a>
-                    <a class="col-3" href="https://www.linkedin.com/" title="Partager sur LinkedIn">
+                    <a class="col-3 grow" href="https://www.linkedin.com/" title="Partager sur LinkedIn">
                         <img src="./resources/png/picto-linkedin.png" alt="Partager sur LinkedIn">
                         <p>LINKEDIN</p>
                     </a>
-                    <a class="col-3" href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com." title="Partager par mail">
+                    <a class="col-3 grow" href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com." title="Partager par mail">
                         <img src="./resources/png/picto-envoyerparmail.png" alt="Partager par mail">
                         <p>MAIL</p>
                     </a>
                 </div>
             </div>
             <div class="S7-centerFooter S7_logoFlores col-md-12 col-lg-4 d-flex flex-column justify-content-center ">
-                <a href="https://flores-amo.fr/" target="_blank">
+                <a class="grow" href="https://flores-amo.fr/" target="_blank">
                     <img src="./resources/png/logo-flores.png" alt="Logo Florès">
                 </a>
             </div>
@@ -331,11 +333,11 @@
                 <p class="S7-textFooter text-left align-self-center">
                     Si vous êtes prêts pour le changement, mais<br />souhaitez l’induire correctement<br /><span class="S7-spanText">contactez-nous.</span>
                 </p>
-                <a href="https://flores-amo.fr/contact/" target="_blank" title="Contactez-nous">
+                <a class="grow" href="https://flores-amo.fr/contact/" target="_blank" title="Contactez-nous">
                     <img src="./resources/png/picto-contact.png" alt="Contactez-nous" />
                 </a>
             </div>
-            <div class="S7-mentions col d-none justify-content-center flex-column align-self-center">
+            <div class="S7-mentions col d-flex justify-content-center flex-column align-self-center">
                 <p>
                     Sur une idée originale de 
                     <a class="S7-bottomLink" href="https://pdb-by-estellegirod.com/" target="_blank">Poulette de Bresse</a>

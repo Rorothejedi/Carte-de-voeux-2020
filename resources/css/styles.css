@@ -96,9 +96,7 @@ a:link {
     font-weight: 500;
 }
 
-.S1-circle, .S2-circle, .S3-circle, .S4-circle, .S5-circle, .S6-circle {
-    animation: 1s infinite alternate ease;
-}
+
 
 /* SCREEN 2 */
 .S2-title {
@@ -341,7 +339,7 @@ footer {
 }
 .S7-leftFooter, .S7-rightFooter, .S7-centerFooter {
     padding-bottom: -16vh;
-    height: 80%;
+    /* height: 80%; */
     background-color: var(--main-color);
 }
 .S7-mentions {
@@ -459,9 +457,14 @@ svg {
     width: 3rem;
     position: relative;
     left: 20px;
-    bottom: 60px;
+    bottom: 40px;
     margin-right: -20px;
     visibility: hidden;
+}
+.S1-range {
+    padding: 50px;
+    white-space: nowrap;
+    position: relative;
 }
 
 /* S2 */
@@ -533,6 +536,9 @@ svg {
 /* ----------------   Animations   -------------------- */
 /* ____________________________________________________ */
 
+.S1-circle, .S2-circle, .S3-circle, .S4-circle, .S5-circle, .S6-circle {
+    animation: 1s infinite alternate ease;
+}
 .textAnimation {
     animation-name: fadeIn, slideInUp;
 }
@@ -603,6 +609,12 @@ svg {
 }
 .S7-lastDelay {
     animation-delay: 12s;
+}
+.grow * { 
+    transition: all .2s ease-in-out; 
+}
+.grow:hover img, .grow:hover h2 { 
+    transform: scale(1.1); 
 }
 
 /* ---------------------------------------------------- */
@@ -678,7 +690,7 @@ svg {
 
     /* SCREEN 2 */
     .S2-svg {
-        top: 0vw;
+        top: -3vw;
         left: 28vw;
     }
     #S2-action {
@@ -688,7 +700,7 @@ svg {
 
     /* SCREEN 3 */
     .S3-svg {
-        top: 2vw;
+        top: 0vw;
         left: 28vw;
     }
     #S3-action {
@@ -735,6 +747,11 @@ svg {
         width: 400px !important;
         top: 250px;
         left: 60vw;
+    }
+
+    /* SCREEN 7 */
+    .S7-ornement {
+        padding: 10px 0 10px 0;
     }
 }
 
@@ -996,7 +1013,7 @@ svg {
         width: 400px;
         height: auto;
         top: 47vh;
-        left: 8vw;
+        left: 0vw;
     }
     #S3-action {
         top: 35vh;
@@ -1090,9 +1107,10 @@ svg {
     }
 }
 /* Adaptation pour le défilement des petits écrans */
-@media (max-height: 640px) {
+@media (max-height: 640px), (orientation: portrait) {
     html {
         overflow-y: auto;
+        overflow-x: auto;
     }
 }
 
@@ -1159,6 +1177,7 @@ svg {
 #S5 { display: none !important; }
 #S6 { display: none !important; }
 #S7 { display: none !important; } */
+
 
 
 /*_____________________________________________*/
