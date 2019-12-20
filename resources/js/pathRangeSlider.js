@@ -40,7 +40,7 @@ const pathRangeSlider = () => {
     const W = path.get(0).getBoundingClientRect().width;
     const pathLength = path.get(0).getTotalLength();
     // Apparition modal au bout de 8 secondes
-    // const modalTimer = setTimeout(toggleModal, 8000);
+    const modalTimer = setTimeout(toggleModal, 8000);
     let div = document.createElement('div');
     const drag = Draggable.create(div, {
         type: 'x,y', 
@@ -54,12 +54,8 @@ const pathRangeSlider = () => {
         let P = path.get(0).getPointAtLength(this.x / W * pathLength);
         
         // Clear du modal
-        // clearTimeout(modalTimer);
-
+        clearTimeout(modalTimer);
         console.log("P.x : ", P.x)
-        // console.log("P.y : ",P.y)
-        // console.log("pathLength : ", pathLength)
-        // console.log(W)
         
         if (actualScreen === 4 && reverseDrag) {
             // Direction inverse
@@ -113,7 +109,6 @@ const pathRangeSlider = () => {
                     } else if (countCaress === 2) {
                         $( '.rrrThree2' ).fadeIn();
                     }
-
                     if (countCaress < 2) {
 
                         $('.S3-range').fadeOut(('slow'), () => {
@@ -138,9 +133,7 @@ const pathRangeSlider = () => {
                     nextScreen();
                 }
             } else if (actualScreen === 5) {
-
                 $( ".S5-circle" ).removeClass("circleAnimation");
-
                 if ((isChrome && P.x === 500) || (!isChrome && P.x >= 490)) {
                     $( "#S5-action" ).css("visibility", "visible").fadeIn();
                     drag[0].disable();
@@ -148,7 +141,6 @@ const pathRangeSlider = () => {
                 }
             } else if (actualScreen === 6) {
                 $( ".S6-circle" ).removeClass("circleAnimation");
-
                 if ((isChrome && P.x === 500) || (!isChrome && P.x >= 490)) {
                     $( "#S6-action" ).css("visibility", "visible").fadeIn();
                     drag[0].disable();
@@ -184,11 +176,9 @@ const dragBall = () => {
             pathRangeSlider();
             touchBall = true;
         }
-        if (X < W / 5) {
+        if (X < W / 5)
             TweenLite.set('#S6-catTail',{ x: X * 0.03, y: Y * 0.05 });
-        } else {
+        else
             TweenLite.set('#S6-catTail',{ y: Y * 0.05 });
-
-        }
     };
 }
