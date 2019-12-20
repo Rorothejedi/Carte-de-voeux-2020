@@ -13,8 +13,8 @@ const screens = [
 // const hightSpeed = 400;
 const slowSpeed = "slow";
 const hightSpeed = "fast";
-// let actualScreen = 0;
-let actualScreen = 6;
+let actualScreen = 0;
+// let actualScreen = 5;
 
 if (actualScreen === 0)
     $(screens[actualScreen++]).fadeIn(slowSpeed);
@@ -23,15 +23,29 @@ const nextScreen = () => {
     setTimeout(() => {
         $(screens[actualScreen - 1]).fadeOut(slowSpeed,() => {
             $(screens[actualScreen++]).show();
-            pathRangeSlider();
-            if (actualScreen === 7)
-                stats();
+            if (actualScreen === 7) {
+                // stats();
+                $( '#S7' ).toggleClass('d-none').toggleClass('d-flex');
+               
+            } else {
+                pathRangeSlider();
+                // callback()
+            }
         });
+
     }, 300);
 }
 
 pathRangeSlider();
 
-
-
-
+// nextScreen(() => {
+//     nextScreen(() => {
+//         nextScreen(() => {
+//             nextScreen(() => {
+//                 nextScreen(() => {
+//                     nextScreen()
+//                 })
+//             })
+//         })
+//     })
+// })

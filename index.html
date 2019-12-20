@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./vendor/normalize.css">
     <link rel="stylesheet" href="./vendor/animate.css">
     <link rel="stylesheet" href="./resources/css/styles.css">
     <title>Florès | Voeux 2020</title>
@@ -34,7 +35,9 @@
                 <!-- Real path -->
                 <path 
                     id="S1-path"
+                    class="path realPath"
                     d="M0 0 700 0"
+                    stroke-width="1"
                 />
                 <!-- Target -->
                 <circle 
@@ -248,6 +251,7 @@
                     <!-- Real path -->
                     <path 
                         id="S5-path"
+                        class="path realPath"
                         d="M0 0 500 0"
                     />
                     <!-- Target -->
@@ -286,7 +290,6 @@
         </h3>
         <div class="S6-img">
             <img class="S6-cat" src="./resources/svg/ecran6-chat.svg" alt="Chat qui joue" />
-            
         </div>
 
         <div id="S6-after">
@@ -310,6 +313,7 @@
                     />
                     <path 
                         id="S6-path"
+                        class="path realPath"
                         d="M0 0 500 0"
                     />
                     <circle 
@@ -335,7 +339,7 @@
         <img id='forground' class='ball' src="./resources/svg/ecran6-balle.svg" height="130" width="130">
     </div>
 
-    <div id="S7" class="screen S7-display text-center animated">
+    <div id="S7" class="screen S7-display d-none flex-column text-center animated">
         <section class="d-flex flex-column justify-content-center">
             <div class="S7-ornement d-flex justify-content-center">
                 <img class="S7-rightMoustache" src="./resources/svg/moustache-titres.svg" alt="Ornement" />
@@ -443,9 +447,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Button de test -->
-    <button id="nextTest" class="d-none">Next</button>
    
     <noscript class="text-center">
         JavaScript est necessaire pour consulter notre carte de Voeux !

@@ -224,7 +224,7 @@ a:link {
 }
 #S6-catTail {
     width: 5vw;
-    top: 60%;
+    top: 29vw;
     left: 18.5%;
 }
 #S6-after {
@@ -236,8 +236,8 @@ a:link {
 
 /* SCREEN 7 */
 .S7-display {
-    display: flex;
-    flex-direction: column;
+    /* display: flex !important; */
+    /* flex-direction: column; */
 }
 .S7-rightMoustache, .S7-leftMoustache {
     width: 50px;
@@ -426,6 +426,9 @@ svg {
     stroke-linecap: round;
     /*add*/
     fill: transparent;
+}
+.realPath {
+    stroke-opacity: 0;
 }
 .target {
     animation: 1s infinite 0.5s alternate ease;
@@ -633,14 +636,17 @@ svg {
  
     /* SCREEN 6 */
     .S6-cat { 
-        width: 60vw;
+        width: 50vw;
         top: -10vw;
-        left: 10vw;
+        left: 15vw;
     }
     #S6-catTail {
-        width: 6vw;
+        top: 30vw;
+        left: 21vw;
+        width: 5vw;
     }
     #forground {
+        /* top: 90vh; */
         width: 100px;
     }
     #S6-after {
@@ -1062,11 +1068,11 @@ svg {
 
 
 /* !!!!!!!!!!     TEST     !!!!!!!!!!!!! */
-/* .screen {
+.screen {
     display: none;
-} */
+}
 
-#S1 {
+/* #S1 {
     display: none !important;
 }
 #S2 {
@@ -1081,11 +1087,20 @@ svg {
 #S5 {
     display: none !important;
 }
-/* #S6 {
+#S6 {
     display: none !important;
-} */
+}
 #S7 {
     display: none !important;
 }
+
+#S6 {
+    display: none !important;
+}
+#S7 {
+    display: none !important;
+} */
+
+
 
 /*_____________________________________________*/
