@@ -1,4 +1,4 @@
-/*Gère le changement d'écran et les transitions*/
+/* Gère le changement d'écran et les transitions */
 
 const screens = [
     "#S1", 
@@ -9,27 +9,17 @@ const screens = [
     "#S6", 
     "#S7"
 ];
-// const lowSpeed = 1300;
-// const hightSpeed = 400;
-const slowSpeed = "slow";
-const hightSpeed = "fast";
-let actualScreen = 0;
-// let actualScreen = 5;
-
-if (actualScreen === 0)
-    $(screens[actualScreen++]).fadeIn(slowSpeed);
+let actualScreen = 1;
 
 const nextScreen = () => {
     setTimeout(() => {
-        $(screens[actualScreen - 1]).fadeOut(slowSpeed,() => {
+        $(screens[actualScreen - 1]).fadeOut((actualScreen === 4) ? 'fast' : 'slow',() => {
             $(screens[actualScreen++]).show();
             if (actualScreen === 7) {
                 // stats();
                 $( '#S7' ).toggleClass('d-none').toggleClass('d-flex');
-               
             } else {
                 pathRangeSlider();
-                // callback()
             }
         });
 
@@ -37,15 +27,3 @@ const nextScreen = () => {
 }
 
 pathRangeSlider();
-
-// nextScreen(() => {
-//     nextScreen(() => {
-//         nextScreen(() => {
-//             nextScreen(() => {
-//                 nextScreen(() => {
-//                     nextScreen()
-//                 })
-//             })
-//         })
-//     })
-// })

@@ -11,12 +11,12 @@ window.mobilecheck = function() {
 /*
 ** Fonction pour détecter et prévenir le mode landscape.
 */
-// const detectLandscape = () => {
-//     if (window.mobilecheck() && (window.orientation === 90 || window.orientation === -90))
-//         alert('Pour consulter notre carte de voeux dans les meilleurs conditions, retournez votre téléphone pour voir notre carte en mode portait !');
-// }
-// detectLandscape();
+const detectLandscape = () => {
+    if (window.mobilecheck() && (window.orientation === 90 || window.orientation === -90))
+        alert('Pour consulter notre carte de voeux dans les meilleurs conditions, retournez votre téléphone pour voir notre carte en mode portait !');
+}
+detectLandscape();
 
-// window.onorientationchange = () => {
-//     detectLandscape();
-// }
+window.onorientationchange = () => {
+    detectLandscape();
+}

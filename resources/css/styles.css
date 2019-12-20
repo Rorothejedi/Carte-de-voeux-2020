@@ -28,10 +28,9 @@
 /* ____________________________________________________ */
 
 /* Suppression de la barre de défilement */
-html { 
-    margin: 0;
-    padding: 0;
-    /* overflow-y: hidden;  */
+html {
+    overflow-y: hidden; 
+    overflow-x: hidden; 
 }
 body {
     height: 100vh;
@@ -53,6 +52,7 @@ a:link {
     padding-top: 70px;
     font-size: 2.5rem;
     font-family: "LeckerliOneRegular";
+    z-index: 999;
 }
 .SX-subtitle {
     padding-top: 10px;
@@ -60,6 +60,7 @@ a:link {
     font-weight: 500;
     font-family: "RobotoThin", sans-serif;
     line-height: 1.7rem;
+    z-index: 9999;
 }
 .SX-moustache {
     width: 50px;
@@ -94,7 +95,8 @@ a:link {
     line-height: 3.5rem;
     font-weight: 500;
 }
-.S1-circle {
+
+.S1-circle, .S2-circle, .S3-circle, .S4-circle, .S5-circle, .S6-circle {
     animation: 1s infinite alternate ease;
 }
 
@@ -127,26 +129,36 @@ a:link {
     bottom: 30px;
     left: 46vw;
 }
-/* #rrr {
+#rrr, #rrr2, .rrrOne2, .rrrTwo2, .rrrThree2 {
     display: none;
+}
+/* .rrrOneRot {
+    transform: rotate(-25deg);
+
 } */
 .rrrOne, .rrrTwo, .rrrThree {
     position: absolute;
     width: 7vw;
 }
+.rrrAnimationOne {
+    animation: 1s infinite alternate ease;
+}
+.rrrAnimationTwo {
+    animation: 1.5s infinite alternate ease;
+}
+.rrrAnimationThree {
+    animation: 1.2s infinite alternate ease;
+}
 .rrrOne {
-    /* animation: 1s infinite alternate ease; */
     transform: rotate(-25deg);
     left: 10vw;
     bottom: 62vh;
 }
 .rrrTwo {
-    /* animation: 1.5s infinite alternate ease; */
     left: 17vw;
     bottom: 75vh;
 }
 .rrrThree {
-    /* animation: 1.2s infinite alternate ease; */
     transform: rotate(-15deg);
     left: 19vw;
     bottom: 60vh;
@@ -184,6 +196,7 @@ a:link {
     position: relative;
     top: -720px;
     left: 62vw;
+    /* display: none; */
 }
 .S5-afterSubtitle {
     padding-top: 0;
@@ -232,13 +245,14 @@ a:link {
     position: relative;
     top: 300px;
     left: 60vw;
+    display: none;
 }
 
 /* SCREEN 7 */
-.S7-display {
+/* .S7-display { */
     /* display: flex !important; */
     /* flex-direction: column; */
-}
+/* } */
 .S7-rightMoustache, .S7-leftMoustache {
     width: 50px;
 }
@@ -506,6 +520,9 @@ svg {
     top: 50%; 
     left: 50%;
 }
+.S6-transitionFade {
+    transition: all 0.3s;
+}
 #forground {
     top: 85%; 
     left: 15%;
@@ -516,11 +533,76 @@ svg {
 /* ----------------   Animations   -------------------- */
 /* ____________________________________________________ */
 
+.textAnimation {
+    animation-name: fadeIn, slideInUp;
+}
+
 .targetAnimation, .circleAnimation {
     animation-name: fadeIn;
 }
 .rrrAnimation {
-    animation-name: tada, fadeIn, pulse;
+    animation-name: fadeIn, pulse;
+}
+
+@keyframes anim-catTail {
+    from {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+    }
+    to {
+        -webkit-transform-origin: right;
+        transform-origin: right;
+        -webkit-transform: rotate3d(0, 0, 1, 10deg);
+        transform: rotate3d(0, 0, 1, 10deg);
+    }
+}
+.S2-animCatTail {
+    animation: anim-catTail 2s infinite alternate ease;
+}
+
+/* SCREEN 3 */
+@keyframes anim-catTail2 {
+    from {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+    to {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+        -webkit-transform: rotate3d(0, 0, 1, 10deg);
+        transform: rotate3d(0, 0, 1, 10deg);
+    }
+}
+.S3-animCatTail {
+    animation: anim-catTail2 2s infinite alternate ease;
+}
+
+/* SCREEN 6 */
+.ballAnimation {
+    animation: fadeIn 1s infinite alternate ease;
+}
+
+/* SCREEN 7 */
+.S7-anim-text1 {
+    animation-delay: 2s;
+}
+.S7-anim-text2 {
+    animation-delay: 4s;
+}
+.S7-anim-text3 {
+    animation-delay: 6s;
+}
+.S7-anim-text4 {
+    animation-delay: 8s;
+}
+.S7-anim-text4 {
+    animation-delay: 8s;
+}
+.S7-anim-text5 {
+    animation-delay: 10s;
+}
+.S7-lastDelay {
+    animation-delay: 12s;
 }
 
 /* ---------------------------------------------------- */
@@ -1068,39 +1150,15 @@ svg {
 
 
 /* !!!!!!!!!!     TEST     !!!!!!!!!!!!! */
-.screen {
-    display: none;
-}
+.screen { display: none; }
 
-/* #S1 {
-    display: none !important;
-}
-#S2 {
-    display: none !important;
-}
-#S3 {
-    display: none !important;
-}
-#S4 {
-    display: none !important;
-}
-#S5 {
-    display: none !important;
-}
-#S6 {
-    display: none !important;
-}
-#S7 {
-    display: none !important;
-}
-
-#S6 {
-    display: none !important;
-}
-#S7 {
-    display: none !important;
-} */
-
+/* #S1 { display: none !important; }
+#S2 { display: none !important; }
+#S3 { display: none !important; }
+#S4 { display: none !important; }
+#S5 { display: none !important; }
+#S6 { display: none !important; }
+#S7 { display: none !important; } */
 
 
 /*_____________________________________________*/
