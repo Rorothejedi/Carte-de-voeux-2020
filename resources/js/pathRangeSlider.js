@@ -123,7 +123,7 @@ const pathRangeSlider = () => {
                         $( '.S3-range').toggleClass('fadeOut');
                         setTimeout(() => {
                             nextScreen();
-                        }, 3000);
+                        }, 1000);
                     }
                 }
             } else if (actualScreen === 4) {

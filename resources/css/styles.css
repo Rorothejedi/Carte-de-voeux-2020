@@ -433,6 +433,7 @@ footer {
     font-family: "RobotoThin", sans-serif;
     font-size: 1.3rem;
     height: 100%;
+    cursor: pointer;
 }
 .popupDivContent {
     height: 50vh;
@@ -454,7 +455,7 @@ svg {
 .path {
     stroke: var(--main-color);
     stroke-dasharray: 8,7;
-    stroke-width: 1.9;
+    stroke-width: 1.9px;
     stroke-linecap: round;
     fill: transparent;
 }

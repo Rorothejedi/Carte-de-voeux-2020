@@ -1,5 +1,6 @@
 const modal = document.querySelector(".popup");
 const closeButton = document.querySelector(".close-button-popup");
+const closeSentence = document.querySelector(".close-sentence-popup");
 const popupTitle = $( "#popupTitle" );
 const popupContent = $( "#popupContent" );
 
@@ -26,5 +27,6 @@ const windowOnClick = (event) => {
         toggleModal();
 }
 
+closeSentence.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
