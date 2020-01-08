@@ -6,8 +6,6 @@ function isChrome(){
 var modalTimer;
 var fadeAfterTouchBall = false;
 
-$('#debug span').append('<div>test start</div>');
-
 function pathRangeSlider (){
     var path;
     var circle;
