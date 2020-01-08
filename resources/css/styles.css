@@ -1242,12 +1242,12 @@ svg {
 
 
 /* !!!!!!!!!!     TEST     !!!!!!!!!!!!! */
-.screen { display: none; }
+/* .screen { display: none; } */
 
-/* #S1 { display: none !important; }
+#S1 { display: none !important; }
 #S2 { display: none !important; }
 #S3 { display: none !important; }
 #S4 { display: none !important; }
 #S5 { display: none !important; }
-#S6 { display: none !important; }
-#S7 { display: none !important; } */
+/* #S6 { display: none !important; } */
+#S7 { display: none !important; }
