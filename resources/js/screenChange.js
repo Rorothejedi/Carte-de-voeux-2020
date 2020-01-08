@@ -9,7 +9,7 @@ const screens = [
     "#S6", 
     "#S7"
 ];
-var actualScreen = 6;
+var actualScreen = 1;
 function nextScreen () {
     setTimeout(function(){
         $(screens[actualScreen - 1]).fadeOut((actualScreen === 4) ? 'fast' : 'slow',function() {
