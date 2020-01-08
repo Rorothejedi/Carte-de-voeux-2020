@@ -9,11 +9,10 @@ const screens = [
     "#S6", 
     "#S7"
 ];
-let actualScreen = 1;
-
-const nextScreen = () => {
-    setTimeout(() => {
-        $(screens[actualScreen - 1]).fadeOut((actualScreen === 4) ? 'fast' : 'slow',() => {
+var actualScreen = 1;
+function nextScreen () {
+    setTimeout(function(){
+        $(screens[actualScreen - 1]).fadeOut((actualScreen === 4) ? 'fast' : 'slow',function() {
             $(screens[actualScreen++]).show();
             if (actualScreen === 7) {
                 $( '#S7' ).toggleClass('d-none').toggleClass('d-flex');
@@ -22,7 +21,6 @@ const nextScreen = () => {
                 pathRangeSlider();
             }
         });
-
     }, 300);
 }
 
