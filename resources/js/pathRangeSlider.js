@@ -170,6 +170,7 @@ function dragBall(){
         clearTimeout(modalTimer);
         if (!fadePaw) {
             $( '#S6-catTail' ).removeClass('S6-transitionFade');
+            $( '#S6-catEyes' ).removeClass('S6-transitionFade');
             fadePaw = true;
         }
         if (!touchBall) {
@@ -180,9 +181,11 @@ function dragBall(){
         }
         if (X < W / 5){
             TweenLite.set('#S6-catTail',{ x: X * 0.03, y: Y * 0.05 });
+            TweenLite.set('#S6-catEyes',{ x: X * 0.03, y: Y * 0.03 });
         }
         else{
             TweenLite.set('#S6-catTail',{ y: Y * 0.05 });
+            TweenLite.set('#S6-catEyes',{ y: Y * 0.03 });
         }
     };
 }
