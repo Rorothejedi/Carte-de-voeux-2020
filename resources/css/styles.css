@@ -229,20 +229,30 @@ a:link {
 
 /* SCREEN 6 */
 .S6-img {
-    position: relative;
+    position: fixed;
+    left: 11vw;
+    top: 12.5vh;
 }
-.S6-cat {
-    position: absolute;
+
+
+img.S6-cat {
     width: 50vw;
-    z-index: -999;
-    top: -7vw;
-    left: 13vw;
 }
+
 #S6-catTail {
-    width: 5vw;
-    top: 29vw;
-    left: 18.5%;
+    position: absolute;
+    top: 57%;
+    width: 12%;
+    left: 5%;
 }
+
+#S6-catEyes {
+    position: absolute;
+    top: 23.2%;
+    width: 18%;
+    left: 9.5%;
+}
+
 #S6-after {
     width: 500px !important;
     position: relative;
@@ -730,10 +740,6 @@ svg {
     }
 
     /* SCREEN 6 */
-    .S6-cat { 
-        top: 1vw;
-        left: 13vw;
-    }
     #S6-after {
         top: 600px;
         left: 67vw;
@@ -792,16 +798,6 @@ svg {
     }
  
     /* SCREEN 6 */
-    .S6-cat { 
-        width: 50vw;
-        top: -10vw;
-        left: 15vw;
-    }
-    #S6-catTail {
-        top: 30vw;
-        left: 21vw;
-        width: 5vw;
-    }
     #forground {
         width: 100px;
     }
@@ -950,19 +946,12 @@ svg {
     }
 
     /* SCREEN 6 */
-    .S6-cat {
-        width: 500px;
-        top: 3vw;
-        left: 24vw;
-    }
-    #S6-catTail {
-        width: 50px;
-        top: 50%;
-        left: 32%;
-    }
     #forground {
         width: 80px;
         top: 60%;
+    }
+    .S6-img{
+        top: 30vh;
     }
     #S6-after {
         top: 55vw;
@@ -1132,17 +1121,12 @@ svg {
     }
 
     /* SCREEN 6 */
-    .S6-cat {
-        position: absolute;
-        width: 250px;
-        top: 0px;
-        left: 24vw;
-    }
-    #S6-catTail {
-        width: 25px;
-    }
     #forground {
         width: 50px;
+    }
+    .S6-img{
+        top: 35vh;
+        left: 25vw;
     }
     #S6-after {
         width: 90vw !important;
@@ -1191,10 +1175,6 @@ svg {
 /* Gestion de la patoune */
 @media (max-width: 576px) and (min-width: 369px) {
     /* SCREEN 6 */
-    #S6-catTail {
-        top: 350px;
-        left: 32%;
-    }
     #forground {
         top: 410px;
         left: 25%;
@@ -1202,10 +1182,6 @@ svg {
 }
 @media (max-width: 368px) and (min-width: 345px) {
     /* SCREEN 6 */
-    #S6-catTail {
-        top: 370px;
-        left: 33%;
-    }
     #forground {
         top: 430px;
         left: 22%;
@@ -1213,10 +1189,6 @@ svg {
 }
 @media (max-width: 344px) and (min-width: 322px) {
     /* SCREEN 6 */
-    #S6-catTail {
-        top: 390px;
-        left: 32%;
-    }
     #forground {
         top: 450px;
         left: 22%;
@@ -1224,10 +1196,6 @@ svg {
 }
 @media (max-width: 321px) {
     /* SCREEN 6 */
-    #S6-catTail {
-        top: 420px;
-        left: 33%;
-    }
     #forground {
         top: 490px;
         left: 22%;

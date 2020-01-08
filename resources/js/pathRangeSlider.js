@@ -156,7 +156,7 @@ function dragBall(){
     var fadePaw = false;
     var touchBall = false;
 
-    TweenLite.set('.ball',{ xPercent: -50, yPercent: -50 });
+    //TweenLite.set('.ball',{ xPercent: -50, yPercent: -50 });
     Draggable.create('#forground',{
         bounds: window,
         onDrag: Update
@@ -179,13 +179,13 @@ function dragBall(){
             pathRangeSlider();
             touchBall = true;
         }
-        if (X < W / 5){
+        if (!window.mobilecheck()){
             TweenLite.set('#S6-catTail',{ x: X * 0.03, y: Y * 0.05 });
-            TweenLite.set('#S6-catEyes',{ x: X * 0.03, y: Y * 0.03 });
+            TweenLite.set('#S6-catEyes',{ x: X * 0.04, y: Y * 0.02 });
         }
         else{
-            TweenLite.set('#S6-catTail',{ y: Y * 0.05 });
-            TweenLite.set('#S6-catEyes',{ y: Y * 0.03 });
+            TweenLite.set('#S6-catTail',{ x: X * 0.01, y: Y * 0.03 });
+            TweenLite.set('#S6-catEyes',{ x: X * 0.02, y: Y * 0.01 });
         }
     };
 }
