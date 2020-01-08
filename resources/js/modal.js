@@ -11,7 +11,7 @@ function toggleModal () {
         popupTitle.text("Heu, là en fait il faut caresser le chat");
         popupContent.text("«Ah pardon j’avais pas compris»");
     } else if (actualScreen === 3) {
-        popupTitle.text("Heu, là en fait il faut - encore - caresser le chat");
+        popupTitle.text("Heu, là en fait il faut - encore - caresser le chat, 3 fois.");
         popupContent.text("«Ah oui ok»");
     } else if (actualScreen === 4) {
         popupTitle.text("Du coup là en fait il faut caresser le chat mais dans l ’autre sens");

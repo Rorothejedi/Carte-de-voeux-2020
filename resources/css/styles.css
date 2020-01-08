@@ -96,6 +96,8 @@ a:link {
     font-family: "RobotoThin", sans-serif;
 }
 .S1-tuto {
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 135px;
     padding-bottom: 80px;
     font-size: 3rem;
@@ -578,6 +580,8 @@ svg {
 .textAnimation {
     -webkit-animation-name: fadeIn, slideInUp;
             animation-name: fadeIn, slideInUp;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .targetAnimation, .circleAnimation {
@@ -831,7 +835,7 @@ svg {
     /* Popup */
     .popup-content {
         height: 100vh;
-        width: 100%;
+        width: 100vw;
     }
 
     /* SCREEN 1*/

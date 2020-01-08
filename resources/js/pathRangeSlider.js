@@ -53,10 +53,12 @@ function pathRangeSlider (){
 
 
     function update() {
+        console.log(W);
         var P = path.get(0).getPointAtLength(this.x / W * pathLength);
         
         clearTimeout(modalTimer);
-        // console.log("P.x : ", P.x)  
+        //console.log("P.x : ", P.x)  
+
         if (actualScreen === 4 && reverseDrag) {
             // Direction inverse
             TweenLite.set(drag[0].target, { x: 600, y: 100, onUpdate:drag[0].update, onUpdateScope:drag[0]});
@@ -68,7 +70,7 @@ function pathRangeSlider (){
             if (actualScreen === 1) {
                 if (P.x > 0)
                     $( ".S1-circle" ).removeClass("circleAnimation");
-                if ((isChrome && P.x === 500) || (!isChrome && P.x >= 490)) {
+                if ((isChrome() && P.x === 500) || (!isChrome() && P.x >= 490)) {
                     $( "#S1-action" ).hide().css("visibility", "visible").fadeIn();
                     drag[0].disable();
                     nextScreen();
@@ -89,7 +91,7 @@ function pathRangeSlider (){
             } else if (actualScreen === 3) {
                 if (P.x > 0)
                     $( ".S3-circle" ).removeClass("circleAnimation");
-                if ((isChrome && P.x === 455) || (!isChrome && P.x >= 450)) {
+                if ((isChrome() && P.x === 455) || (!isChrome() && P.x >= 450)) {
                     drag[0].disable();
                     $( "#S3-action" ).css("visibility", "visible").fadeIn();
                     $( '.S3-range' ).removeClass('delay-2s').removeClass('fadeIn');
@@ -130,14 +132,14 @@ function pathRangeSlider (){
                 }
             } else if (actualScreen === 5) {
                 $( ".S5-circle" ).removeClass("circleAnimation");
-                if ((isChrome && P.x === 500) || (!isChrome && P.x >= 490)) {
+                if ((isChrome() && P.x === 500) || (!isChrome() && P.x >= 490)) {
                     $( "#S5-action" ).css("visibility", "visible").fadeIn();
                     drag[0].disable();
                     nextScreen();
                 }
             } else if (actualScreen === 6) {
                 $( ".S6-circle" ).removeClass("circleAnimation");
-                if ((isChrome && P.x === 500) || (!isChrome && P.x >= 490)) {
+                if ((isChrome() && P.x === 500) || (!isChrome() && P.x >= 490)) {
                     $( "#S6-action" ).css("visibility", "visible").fadeIn();
                     drag[0].disable();
                     nextScreen();
@@ -180,8 +182,8 @@ function dragBall(){
             touchBall = true;
         }
         if (!window.mobilecheck()){
-            TweenLite.set('#S6-catTail',{ x: X * 0.03, y: Y * 0.05 });
-            TweenLite.set('#S6-catEyes',{ x: X * 0.04, y: Y * 0.02 });
+            TweenLite.set('#S6-catTail',{ x: X * 0.01, y: Y * 0.05 });
+            TweenLite.set('#S6-catEyes',{ x: X * 0.01, y: Y * 0.02 });
         }
         else{
             TweenLite.set('#S6-catTail',{ x: X * 0.01, y: Y * 0.03 });
