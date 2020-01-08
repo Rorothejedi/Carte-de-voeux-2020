@@ -4,7 +4,7 @@ const closeSentence = document.querySelector(".close-sentence-popup");
 const popupTitle = $( "#popupTitle" );
 const popupContent = $( "#popupContent" );
 
-const toggleModal = () => {
+function toggleModal () {
     if (actualScreen === 2 || actualScreen === 3 || actualScreen === 4 || actualScreen === 6)
         modal.classList.toggle("show-popup");
     if (actualScreen === 2) {
@@ -21,11 +21,11 @@ const toggleModal = () => {
         popupContent.text("«Trop cool»");
     }
 }
-
-const windowOnClick = (event) => {
+function windowOnClick (event){
     if (event.target === modal)
         toggleModal();
 }
+
 
 closeSentence.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
