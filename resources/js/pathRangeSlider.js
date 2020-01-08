@@ -1,14 +1,18 @@
 /* Gère l'input range */
+function isChrome(){
+    if(typeof window.chrome === "object" && navigator.appVersion.indexOf('Edge') === -1)
+        return true;
+}
+var modalTimer;
+var fadeAfterTouchBall = false;
 
-const isChrome = (typeof window.chrome === "object" && navigator.appVersion.indexOf('Edge') === -1);
-let modalTimer;
-let fadeAfterTouchBall = false;
+$('#debug span').append('<div>test start</div>');
 
-const pathRangeSlider = () => {
-    let path;
-    let circle;
-    let countCaress = 0;
-    let reverseDrag;
+function pathRangeSlider (){
+    var path;
+    var circle;
+    var countCaress = 0;
+    var reverseDrag;
     
     if (actualScreen === 1) {
         path = $("#S1-path");
@@ -28,33 +32,31 @@ const pathRangeSlider = () => {
         circle = document.getElementById("S5-circle");
     } else if (actualScreen === 6) {
         if (!fadeAfterTouchBall) {
-            setTimeout(() => {
+            setTimeout(function(){ 
                 dragBall();
                 $( '#forground' ).addClass('ballAnimation');
             }, 2000);
-            fadeAfterTouchBall = true;
         }
         path = $("#S6-path");
         circle = document.getElementById("S6-circle");
     }
-
     const W = path.get(0).getBoundingClientRect().width;
     const pathLength = path.get(0).getTotalLength();
     // Apparition modal au bout de 8 secondes
     modalTimer = setTimeout(toggleModal, 8000);
-    let div = document.createElement('div');
-    const drag = Draggable.create(div, {
+    var div = document.createElement('div');
+    var drag = Draggable.create(div, {
         type: 'x,y', 
         bounds: { minX: 0, maxX: pathLength },
         trigger: circle, 
         overshootTolerance: 5, 
         onDrag: update
     });
-    
-    function update() {
-        let P = path.get(0).getPointAtLength(this.x / W * pathLength);
-        
 
+
+    function update() {
+        var P = path.get(0).getPointAtLength(this.x / W * pathLength);
+        
         clearTimeout(modalTimer);
         // console.log("P.x : ", P.x)  
         if (actualScreen === 4 && reverseDrag) {
@@ -77,16 +79,14 @@ const pathRangeSlider = () => {
                 if (P.x > 0)
                     $( ".S2-circle" ).removeClass("circleAnimation");
                 if (P.x >= 600) {
-                    $( "#S2-action" ).hide().css("visibility", "visible").fadeIn(() => {
+                    $( "#S2-action" ).hide().css("visibility", "visible").fadeIn("fast",function(){
                         $("#S2-action").fadeOut();
                     });
                     drag[0].disable();
                     $( '.S2-rangeFade' ).toggleClass('delay-2s').toggleClass('fadeIn').toggleClass('fadeOut');
                     $( '#rrr' ).fadeIn();
                     $( '.S2-catTail ').addClass('S2-animCatTail');
-                    setTimeout(() => {
-                        nextScreen();
-                    }, 3000);
+                    setTimeout(function(){ nextScreen(); }, 3000);
                 }
             } else if (actualScreen === 3) {
                 if (P.x > 0)
@@ -96,22 +96,22 @@ const pathRangeSlider = () => {
                     $( "#S3-action" ).css("visibility", "visible").fadeIn();
                     $( '.S3-range' ).removeClass('delay-2s').removeClass('fadeIn');
                     if (countCaress === 0) {
-                        $( '#rrr2' ).show(() => {
+                        $( '#rrr2' ).show('slow',function(){
                             $( '.S2-catTail ').removeClass('S2-animCatTail');
                             $( '.S3-catTail' ).addClass('S3-animCatTail');
-                            $( '.rrrOne2' ).fadeIn(() => {
+                            $( '.rrrOne2' ).fadeIn('slow',function(){
                                 modalTimer = setTimeout(toggleModal, 7000);
                             });
                         });
                     } else if (countCaress === 1) {
-                        $( '.rrrTwo2' ).fadeIn(() => {
+                        $( '.rrrTwo2' ).fadeIn('slow',function(){
                             modalTimer = setTimeout(toggleModal, 6000);
                         });
                     } else if (countCaress === 2) {
                         $( '.rrrThree2' ).fadeIn();
                     }
                     if (countCaress < 2) {
-                        $('.S3-range').fadeOut(('slow'), () => {
+                        $('.S3-range').fadeOut('slow',function() {
                             $( "#S3-action" ).hide();
                             TweenLite.set(div, {x: 0, y: 0 });
                             TweenLite.set(circle, { attr: { cx: 150, cy: 275 } });
@@ -121,9 +121,7 @@ const pathRangeSlider = () => {
                         });
                     } else {
                         $( '.S3-range').toggleClass('fadeOut');
-                        setTimeout(() => {
-                            nextScreen();
-                        }, 1000);
+                        setTimeout(function(){ nextScreen(); }, 1000);
                     }
                 }
             } else if (actualScreen === 4) {
@@ -148,12 +146,17 @@ const pathRangeSlider = () => {
                 }
             }
         }
+
     };
+
 }
 
-const dragBall = () => {
-    let fadePaw = false;
-    let touchBall = false;
+
+
+function dragBall(){
+
+    var fadePaw = false;
+    var touchBall = false;
 
     TweenLite.set('.ball',{ xPercent: -50, yPercent: -50 });
     Draggable.create('#forground',{
@@ -177,9 +180,11 @@ const dragBall = () => {
             pathRangeSlider();
             touchBall = true;
         }
-        if (X < W / 5)
+        if (X < W / 5){
             TweenLite.set('#S6-catTail',{ x: X * 0.03, y: Y * 0.05 });
-        else
+        }
+        else{
             TweenLite.set('#S6-catTail',{ y: Y * 0.05 });
+        }
     };
 }
